@@ -12,8 +12,17 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="my personal website" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/background.png" />
+
+		<link rel="shortcut icon" href="/icon.png" />
+		<link rel="apple-touch-icon" href="/icon.png" />
+
 		<meta name="generator" content={Astro.generator} />
+		<meta content="nu:site" property="og:title" />
+		<meta content="where all goes to die" property="og:description" />
+		<meta content="https://nuleftus.github.io" property="og:url" />
+		<meta content="https://s1.zerochan.net/Herta.600.3948987.jpg" property="og:image" />
+		<meta content="#ffdbe1" data-react-helmet="true" name="theme-color" />
+
 		<title>{title}</title>
 	</head>
 	<body>
@@ -23,7 +32,7 @@ const { title } = Astro.props;
 <style is:global>
 	html {
 		font-family: monospace;
-		background: #ffffff;
-		color: black;
+		background-color: black;
+		color: whitesmoke;
 	}
 </style>

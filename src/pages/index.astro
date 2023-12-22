@@ -5,12 +5,18 @@ import Link from '../components/Link.astro';
 
 <Layout title="nu:site">
 	<main>
-		<img class="bg" src="/background.png">
-		<img class="title" src="/title.png">
-		<ul role="list">
+		<img class="model" src="character.gif" alt="">
+		<section role="main">
+			<h1>hello and welcome</h1>
+			<p>
+				I do various things on the internet, 
+				going by "nu" as my online persona. 
+				I enjoy video games, anime, manga and designing stuff.
+			</p>
+			<p>she/her</p>
 			<Link
 				href="https://ko-fi.com/nuleftus"
-				text="support me on [ko-fi] ❤️"
+				text="support me on [kofi] ❤️"
 			/>
 			<Link
 				href="https://www.youtube.com/@nuleftus"
@@ -20,31 +26,119 @@ import Link from '../components/Link.astro';
 				href="https://www.last.fm/user/nvkomimi"
 				text="i listen on [last.fm]"
 			/>
-		</ul>
+		</section>
 	</main>
+	<footer>
+		<p>
+			If you find any broken links or bugs on 
+			<a href="https://github.com/nuleftus/nuleftus.github.io">this website</a>, 
+			do not contact me. I do not care, thank you.
+		</p>
+		<p>
+			<script type="text/javascript">var year = new Date();document.write("&copy; "+year.getFullYear()+" nuleftus");</script>
+		</p>
+	</footer>
+	<video class="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+		<source src="bg.mp4" type="video/mp4">
+	</video>
 </Layout>
 
 <style>
+	body {
+		margin: 0;
+		padding: 0;
+	}
 	main {
-		margin: auto;
-		padding: 1rem;
-		max-width: 800px;
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-content: center;
+		flex-direction: row;
+		user-select: none;
+		min-height: 90vh;
+	}
+	section[role="main"] {
+		margin: auto;
+		padding: 4em 3rem;
+		margin: 1rem;
+		width: 30em;
+		height: fit-content;
+		color: white;
+		background-color: rgba(220, 193, 199, 0.95);
+		border: 0.3em solid rgb(150, 129, 134);
+		border-radius: 0 0 0 5em;
+		line-height: 1.6;
+		font-size: 1.5em;
+
+		margin-top: 10vh;
+		box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.5);
+	}
+	.model {
+		max-height: 90vh;
+		min-height: 60em;
+		pointer-events: none;
+	}
+	.background-video {
+		min-height: 100vh;
+		min-width: 100vw;
+		opacity: 0.15;
+		position: fixed;
+		z-index: -1;
+		transform: translate(-50%, -50%);
+  		top: 50%;
+  		left: 50%;
+	}
+	footer {
+		position: relative;
+		bottom: 0;
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		text-align: center;
 		flex-direction: column;
+		user-select: none;
+		color: rgba(255, 255, 255, 0.5);
 	}
-	img.bg {
-		max-width: 100%;
+	footer>p {
+		margin: 0.5em;
 	}
-	img.title {
-		max-width: 30%;
+	a {
+		text-decoration: none;
+		color: inherit;
 	}
-	[role="list"] {
-		padding: 0;
-		margin: 0;
+
+	h1 {
+		font-style: oblique;
+		letter-spacing: 0.1em;
+	}
+
+
+	@media only screen and (max-width: 900px) {
+  		main {
+    		flex-direction: column;
+			justify-content: center;
+  		}
+		section[role="main"] {
+			position: relative;
+			max-width: 70vw;
+			margin: auto;
+			margin-bottom: 10em;
+		}
+		.model {
+			min-height: initial;
+			max-height: initial;
+			height: 40em;
+			width: 30em;
+			margin: auto;
+		}
+		footer {
+			backdrop-filter: blur(3em);
+			z-index: 20;
+			background-color: rgba(0, 0, 0, 0.269);
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.612);
+			position: fixed;
+		}
+		footer>p {
+			margin: 0.5em 2em;
+		}
 	}
 </style>
