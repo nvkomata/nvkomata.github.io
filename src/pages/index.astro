@@ -13,7 +13,7 @@ import Link from '../components/Link.astro';
 				going by "nu" as my online persona. 
 				I enjoy video games, anime, manga and designing stuff.
 			</p>
-			<p>she/her</p>
+			<p title="pronouns">she/her</p>
 			<Link
 				href="https://ko-fi.com/nuleftus"
 				text="support me on [kofi] ❤️"
@@ -38,7 +38,7 @@ import Link from '../components/Link.astro';
 			<script type="text/javascript">var year = new Date();document.write("&copy; "+year.getFullYear()+" nuleftus");</script>
 		</p>
 	</footer>
-	<video class="background-video" autoplay loop muted poster="poster.jpg">
+	<video class="background-video" autoplay loop muted poster="poster.gif">
 		<source src="bg.mp4" type="video/mp4">
 	</video>
 </Layout>
@@ -89,7 +89,7 @@ import Link from '../components/Link.astro';
 	}
 	footer {
 		position: relative;
-		bottom: 0;
+		bottom: 0.5em;
 		width: 100vw;
 		display: flex;
 		justify-content: center;
@@ -99,7 +99,7 @@ import Link from '../components/Link.astro';
 		color: rgba(255, 255, 255, 0.5);
 	}
 	footer>p {
-		margin: 0.5em;
+		margin: 0.75em;
 	}
 	a {
 		text-decoration: none;
@@ -122,12 +122,13 @@ import Link from '../components/Link.astro';
 			max-width: 70vw;
 			margin: auto;
 			margin-bottom: 10em;
+			border-top-right-radius: 3em;
 		}
 		.model {
 			min-height: initial;
 			max-height: initial;
-			height: 40em;
-			width: 30em;
+			height: 45em;
+			width: 35em;
 			margin: auto;
 		}
 		footer>p {
