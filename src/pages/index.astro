@@ -1,0 +1,461 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
+import LinkButton from "../components/LinkButton.astro";
+import Places from "../components/Places.astro";
+
+import { Image } from "astro:assets";
+import logoImg from "../assets/logo.svg";
+import avatar from "../assets/avatar.png";
+---
+
+<Layout title="nvkomata">
+  <section class="landing-section">
+    <div class="main">
+      <Image src={logoImg} alt="nvkomata" class="logo" loading="eager" />
+      <div class="links">
+        <Link
+          href="https://linktr.ee/nvkomata"
+          name="see my links on linktree"
+          icon="linktree"
+        />
+        <Link
+          href="https://www.youtube.com/@nvkomata"
+          name="watch my videos on youtube"
+          icon="youtube"
+        />
+        <Link
+          href="https://akko.wtf/nvkomata"
+          name="follow me on fedi"
+          icon="fedi"
+        />
+      </div>
+      <p>amateur vtuber & graphic designer <span>💮🩷🖤🩷</span></p>
+      <p title="pronouns">
+        <a href="https://en.pronouns.page/@nvkomata">she/her</a>
+      </p>
+    </div>
+
+    <video
+      class="section-bg"
+      autoplay
+      loop
+      muted
+      playsinline
+      disablepictureinpicture
+      poster="poster.jpg"
+    >
+      <source src="-main.mp4" />
+    </video>
+  </section>
+  <section class="info-section">
+    <div class="box-wrapper">
+      <div class="box">
+        <h1>hi!</h1>
+        <div>
+          <p>
+            I enjoy VR a lot, linux & FOSS, gaming, art - be it making or
+            viewing, anime, music <i>(especially metal and rock)</i>, graphic
+            design, poetry - and put out some stuff based on that.
+          </p>
+          <p>want to show support?:</p>
+        </div>
+        <LinkButton
+          href="https://ko-fi.com/nvkomata"
+          text="Support me on Ko-fi"
+          icon="kofi"
+        />
+      </div>
+      <Image src={avatar} alt="avi" class="avatar" loading="eager" />
+    </div>
+  </section>
+
+  <section class="places-section half">
+    <h1>see also</h1>
+
+    <Places />
+
+    <video
+      class="section-bg"
+      autoplay
+      loop
+      muted
+      disablepictureinpicture
+      poster="walls/bg.jpg"
+    >
+      <script is:inline>
+        const srcs = ["chainsawmanedit.mp4"];
+
+        const random = Math.floor(Math.random() * srcs.length);
+
+        document.write("<source src='" + srcs[random] + "' type='video/mp4'");
+      </script>
+    </video>
+  </section>
+
+  <section class="blog-section half">
+    <h1>read my blog</h1>
+    <p>hey, take a look! i ramble a bunch in here</p>
+    <a href="/blog"><p>take me there ›</p></a>
+  </section>
+
+  <footer>
+    <Image
+      src="https://moe-counter.glitch.me/get/@nvkosite?theme=rule34"
+      alt=""
+      title="thanks for visiting"
+      class="counter"
+      width="315"
+      height="100"
+    />
+    <p>
+      If you find any broken links or bugs on
+      <a href="https://gitlab.com/nvkomata/nvkomata.github.io">this website</a>,
+      do not contact me. I do not care, thank you.
+    </p>
+    <p>
+      <script type="text/javascript" is:inline>
+        var year = new Date();
+        document.write("&copy; " + year.getFullYear() + " nvkomata");
+      </script>
+    </p>
+  </footer>
+</Layout>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .section-bg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: -1000;
+    position: absolute;
+  }
+  section {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  section.half {
+    height: 50vh;
+    max-height: 50vh;
+  }
+
+  code,
+  pre {
+    font-family: "Iosevka Curly Slab", monospace;
+  }
+
+  .bg-initial {
+    opacity: 0.7;
+  }
+
+  .landing-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+    width: 100vw;
+
+    .section-bg {
+      opacity: 0.7;
+    }
+  }
+
+  div.main {
+    max-width: 50%;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    text-align: right;
+
+    p {
+      margin: 1em;
+
+      max-width: max-content;
+      margin-left: auto;
+      padding: 0.25rem;
+
+      text-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.4);
+
+      span {
+        display: inline-block;
+      }
+    }
+    p[title="pronouns"] {
+      letter-spacing: 0.35em;
+      font-family: "Iosevka Curly Slab", monospace;
+      background-color: #00000050;
+    }
+  }
+
+  .logo {
+    pointer-events: none;
+    max-width: 80%;
+    height: auto;
+    filter: invert();
+    user-select: none;
+  }
+
+  .counter {
+    max-width: max-content;
+    width: 100%;
+    max-height: fit-content;
+    user-select: none;
+    margin: 1em auto;
+  }
+
+  .links {
+    cursor: default;
+    user-select: none;
+  }
+
+  .info-section {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.85)),
+      center / cover no-repeat url("/walls/deepblue.jpg");
+    width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .box {
+      padding: 3em 3em 5.5em 3em;
+      margin: 1em;
+
+      max-width: 26vw;
+      max-height: 80vh;
+
+      z-index: 2;
+
+      font-size: 120%;
+
+      text-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.4);
+    }
+    .box-wrapper {
+      width: 80vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    p {
+      padding-bottom: 1em;
+    }
+    h1 {
+      font-size: 300%;
+    }
+
+    overflow-x: hidden;
+  }
+
+  .avatar {
+    height: 80%;
+    width: auto;
+  }
+
+  .places-section {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    flex-flow: column;
+
+    video {
+      filter: blur(0.5em);
+      opacity: 0.2;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3.5em;
+      text-shadow: 0 0.1em 1em black;
+    }
+  }
+
+  .blog-section {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    flex-flow: column;
+    background-color: black;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)),
+      center / cover no-repeat url("/walls/bg.jpg");
+    text-align: center;
+
+    h1 {
+      font-size: 3.5em;
+      text-shadow: 0 0.1em 1em black;
+    }
+
+    a {
+      max-width: 50%;
+      margin: 0 auto;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .background-video {
+    min-height: 100vh;
+    min-width: 100vw;
+    opacity: 0.35;
+    position: fixed;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  .places img {
+    width: auto;
+  }
+
+  hr {
+    width: 50%;
+    opacity: 0.3;
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #000000aa;
+
+    backdrop-filter: saturate(80%) blur(1.5em) brightness(0.7);
+    -webkit-backdrop-filter: saturate(80%) blur(1.5em) brightness(0.7);
+
+    overflow: hidden;
+    font-size: 0.7em;
+    margin: 2em 0 0 0;
+    padding: 1em 0 3em 0;
+  }
+  footer > p {
+    margin: 0.75em;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h1 {
+    font-family: "Lora", serif;
+    font-weight: normal;
+    letter-spacing: 0em;
+    transform: scaleY(1.25);
+  }
+
+  @media only screen and (min-width: 3000px) {
+    body {
+      font-size: 120%;
+    }
+  }
+
+  @media only screen and (max-width: 1440px) {
+    .info-section {
+      .box {
+        padding: 1em 2em 2.5em 2em;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1040px) {
+    .landing-section div.main {
+      max-width: 75%;
+    }
+    .info-section {
+      flex-direction: column;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.85)),
+        center / cover no-repeat url("/walls/deepblue.jpg");
+
+      .box {
+        max-width: 60%;
+        margin: 1em auto;
+        padding: 1.5em 3em 3.5em 3em;
+
+        [role="button"] {
+          width: 100%;
+          max-width: calc(100% - 3em);
+          text-align: center;
+        }
+      }
+      .box-wrapper {
+        display: flex;
+        position: initial;
+        width: initial;
+        height: initial;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      height: min-content;
+    }
+    .avatar {
+      height: 60vh;
+      margin: auto;
+    }
+  }
+  @media only screen and (max-width: 764px) {
+    .info-section {
+      .box {
+        max-width: 100%;
+        border: none;
+        border-radius: none;
+      }
+    }
+    .moment {
+      iframe {
+        width: 100vw;
+        height: 50vw;
+      }
+    }
+  }
+  @media only screen and (max-height: 800px) {
+    .info-section {
+      .box {
+        font-size: 90%;
+      }
+    }
+    .moment {
+      display: none;
+    }
+  }
+  @media only screen and (max-height: 500px) {
+    .info-section {
+      .box {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+      }
+    }
+    .places-section {
+      h1 {
+        display: none;
+      }
+    }
+  }
+</style>

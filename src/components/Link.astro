@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+	href: string;
+	name: string;
+	icon?: string;
+	a?: string;
+}
+
+const { href, name, icon, a } = Astro.props;
+---
+
+<a rel="me" href={href} title={name} class={a} aria-label={icon}>
+	<Icon name={icon} />
+</a>
+<style>
+	a {
+		display: inline-flex;
+		align-content: center;
+		align-items: center;
+
+		user-select: none;
+		height: 4em;
+		width: 4em;
+		padding: 0.5em;
+		color: white;
+		text-decoration: none;
+		font-weight: normal;
+		transition: all 0.1s ease-out;
+		box-shadow: inset 0 0 0 1px rgba(111, 111, 111, 0.2);
+		border-radius: 100%;
+		backdrop-filter: saturate(200%) brightness(150%) blur(1.5em);
+		-webkit-backdrop-filter: saturate(200%) brightness(150%)  blur(1.5em);
+		background-color: rgba(28, 25, 30, 0.5);
+	}
+	a:hover {
+		background-color: white;
+
+		svg {
+			filter: invert();
+		}
+
+		cursor: pointer;
+	}
+	svg {
+		height: 50%;
+		width: auto;
+		margin: auto;
+		filter: none;
+		align-self: center;
+	}
+	
+	.invert {
+		.icon {
+			filter: invert();
+		}
+		:hover {
+			.icon {
+				filter: none;
+			}
+		}
+	}
+</style>

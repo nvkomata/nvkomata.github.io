@@ -1,0 +1,126 @@
+
+<table>
+    <tr>
+        <td rowspan="3"><img id="album-cover"></td>
+        <td id="track"></td>
+    </tr>
+    <tr>
+        <td id="artist"></td>
+    </tr>
+    <tr>
+        <td id="date"></td>
+    </tr>
+</table>
+
+<style>
+    table {
+        display: inline-block;
+        vertical-align: middle;
+        overflow-x: hidden;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+
+    td :global(a) {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.1s ease-out;
+        padding: 0.2em 0.5em;
+        display: block;
+    }
+    td :global(a:hover) {
+        color: white;
+        background-color: black;
+    }
+    #artist {
+        padding: 0.2em 0.5em;
+    }
+    #track {
+        font-weight: bold;
+    }
+    #album-cover {
+        height: 7.5em;
+        margin-right: 1em;
+        pointer-events: none;
+        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+    }
+</style>
+
+<script type="text/javascript" is:inline>
+const LASTFM_API_KEY = "657b3e5a291f50b33c92dc1e687e4b76"
+const username = "nvkomimi"
+const url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&format=json&api_key=" + LASTFM_API_KEY + "&limit=1&user=" + username
+
+function httpGet(url) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", url, false);
+	xmlHttp.send(null);
+	return xmlHttp.responseText;
+}
+
+function relativeTime(time, time_text) {
+    var time_now = Math.round(Date.now() / 1000)
+    var time_diff = time_now - time
+
+    let SEC_IN_MIN = 60
+    let SEC_IN_HOUR = SEC_IN_MIN * 60
+    let SEC_IN_DAY = SEC_IN_HOUR * 24
+
+    if (time_diff < SEC_IN_HOUR) {
+        let minutes = Math.round(time_diff / SEC_IN_MIN)
+        return minutes + " minute" +
+            ((minutes != 1) ? "s" : "") + " ago"
+    }
+    if (time_diff >= SEC_IN_HOUR && time_diff < SEC_IN_DAY) {
+        let hours = Math.round(time_diff / SEC_IN_HOUR)
+        return hours + " hour" +
+            ((hours != 1) ? "s" : "") + " ago"
+    }
+    if (time_diff >= SEC_IN_DAY)
+        return time_text
+}
+
+var json = JSON.parse(httpGet(url));
+var last_track = json.recenttracks.track[0]
+var track = last_track.name
+var trackLink = last_track.url
+var artist = last_track.artist['#text']
+let relative_time = null
+if (last_track.date) {
+    var unix_date = last_track.date.uts
+    var date_text = last_track.date["#text"]
+    relative_time = relativeTime(unix_date, date_text)
+}
+var now_playing = (last_track["@attr"] == undefined) ? false : true
+var imageLink = last_track.image[3]["#text"]
+
+trackElem = document.getElementById('track')
+artistElem = document.getElementById('artist')
+dateElem = document.getElementById('date')
+albumcoverElem = document.getElementById('album-cover')
+
+trackLinkElem = document.createElement('a')
+trackLinkElem.id = "track"
+trackLinkElem.href = trackLink
+trackLinkElem.target = "_blank"
+trackLinkElem.textContent = track
+
+userLinkElem = document.createElement('a')
+userLinkElem.href = "https://www.last.fm/user/" + username
+userLinkElem.target = "_blank"
+userLinkElem.textContent = (relative_time != null) ? relative_time : "Now playing..."
+
+trackElem.appendChild(trackLinkElem)
+artistElem.textContent = artist
+dateElem.appendChild(userLinkElem)
+albumcoverElem.src = imageLink
+
+console.log(
+    "Artist: " + artist + "\n" +
+    "Track: " + track + "\n" +
+    "Date: " + relative_time + "\n" +
+    "Now playing: " + now_playing)
+
+</script>

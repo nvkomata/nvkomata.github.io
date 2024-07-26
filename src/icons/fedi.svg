@@ -1,0 +1,54 @@
+<svg
+   width="430px"
+   height="512px"
+   viewBox="0 0 430 512"
+   version="1.1"
+   id="svg287"
+   sodipodi:docname="Akkoma.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs291" />
+  <sodipodi:namedview
+     id="namedview289"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.6601562"
+     inkscape:cx="215.04"
+     inkscape:cy="256.30118"
+     inkscape:window-width="1864"
+     inkscape:window-height="1016"
+     inkscape:window-x="56"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg287" />
+  <title
+     id="title281">Akkoma</title>
+  <g
+     id="All-Fediverse-Symbols"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     style="fill:#ffffff">
+    <g
+       id="Akkoma"
+       transform="translate(-41.000000, 0.000000)"
+       fill="#000000"
+       style="fill:#ffffff">
+      <path
+         d="M238.077372,86.478754 C326.859727,17.6862203 371.940044,-8.27769222 382.865023,2.26463908 C394.881542,13.8602801 367.056523,45.5857036 353.807519,98.6102105 C351.303821,108.630387 349.939133,126.765184 349.713454,153.014602 C433.291806,199.421335 473.674883,235.599339 470.862685,261.548615 C469.38112,275.219614 429.791302,272.966578 352.093231,254.789508 C389.105083,345.293142 400.303077,418.463506 385.687211,474.300598 C369.894271,534.634475 305.755298,511.365393 282.042938,472.502849 C261.412687,438.691622 253.03984,383.629072 241.486159,385.534009 C214.979181,389.904403 178.820676,522.020668 85.3280018,511.391657 C37.2604127,505.926942 36.3687331,438.648242 45.5303242,382.126986 C59.2497363,297.486843 90.6548096,230.859953 139.745544,182.246317 C80.8086232,154.742986 53.0053472,136.317685 56.3357163,126.970412 C65.139303,102.26158 123.105336,107.490508 153.73589,106.837143 C163.206262,106.635135 178.907361,107.575264 200.839188,109.65753 C218.521748,99.7396472 230.934476,92.0133886 238.077372,86.478754 Z M211.977634,210 C174.508806,221.388029 155.850204,245.958286 156.001826,283.710772 C156.100749,308.34176 196.952553,318.492367 226.830028,313.943376 C287.074261,304.7709 275.693658,272.728314 267.01209,251.289387 C264.299625,244.591019 257.405713,235.040243 246.330353,222.637057 L211.977634,210 Z"
+         id="path283"
+         style="fill:#ffffff" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+import "@fontsource/iosevka-curly-slab"; // Iosevka is licensed under SIL OFL v1.1
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="my personal website" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <meta name="generator" content={Astro.generator} />
+    <meta content="nvkomata" property="og:title" />
+    <meta content="where all goes to die" property="og:description" />
+    <meta content="https://nvkomata.github.io" property="og:url" />
+    <meta
+      content="https://nvkomata.github.io/favicon.png"
+      property="og:image"
+    />
+    <meta content="#020001" data-react-helmet="true" name="theme-color" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: system-ui;
+    background-color: black;
+    color: #ead7ea;
+  }
+</style>
