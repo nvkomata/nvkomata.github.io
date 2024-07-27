@@ -28,10 +28,17 @@ const posts = (await getCollection("blog")).sort(
           posts.map((post) => (
             <li>
               <a href={`/blog/${post.slug}/`}>
-                <h4 class="title">{post.data.title}</h4>
-                <p class="date">
-                  <FormattedDate date={post.data.pubDate} />
-                </p>
+                <div>
+                  <h4 class="title">{post.data.title}</h4>
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </div>
+                <img
+                  src={post.data.heroImage}
+                  alt={post.data.heroAlt}
+                  title={post.data.heroAlt}
+                />
               </a>
             </li>
           ))
@@ -86,7 +93,16 @@ const posts = (await getCollection("blog")).sort(
     color: black;
   }
   li > a {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    img {
+      height: auto;
+      max-width: 35%;
+      object-fit: cover;
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    }
   }
   .nav > a {
     display: inline-block;
@@ -96,11 +112,21 @@ const posts = (await getCollection("blog")).sort(
     max-width: 50em;
   }
   li::marker {
-    content: "⸸ ";
+    content: "   —   ";
     font-size: 1.2em;
     transform: rotate(-90deg);
   }
   ul {
-    padding: 1.5em;
+    padding: 1.5em 0em 4.5em 1.5em;
+    border-left: 1px solid #ead7ea;
+  }
+  ul::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid #ead7ea;
+    width: 5em;
+    margin-left: -4.125em;
+    margin-top: 1em;
   }
 </style>
