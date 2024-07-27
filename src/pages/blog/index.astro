@@ -1,0 +1,106 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
+---
+
+<Layout title="blog // nvkomata">
+  <main>
+    <h1>nvkomata's blog</h1>
+    <p>
+      a wind comes and goes along with the crowd of crows, the ones that eat
+      away the good meat
+    </p>
+    <div class="nav">
+      <a href="https://akko.wtf/nvkomata">fedi (microblogs)</a>
+      <a href="/">go home</a>
+    </div>
+    <p>.˳·˖✶𓆩𓁺𓆪✶˖·˳.</p>
+
+    <section>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`}>
+                <h4 class="title">{post.data.title}</h4>
+                <p class="date">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85)),
+      center / cover no-repeat fixed url("/walls/bg.jpg");
+    min-height: 100vh;
+  }
+  main {
+    margin: auto;
+    padding: 0 1rem;
+    font-size: 15px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+  }
+  main > p,
+  main > h1 {
+    text-align: center;
+  }
+  h1 {
+    font-family: "Lora", serif;
+    font-weight: normal;
+    letter-spacing: 0em;
+    transform: scaleY(1.25);
+    font-size: 40px;
+  }
+  a {
+    user-select: none;
+    padding: 0.5em 1.25em;
+    color: #ead7ea;
+    text-decoration: none;
+    font-weight: normal;
+    transition: all 0.1s ease-out;
+    font-family: "Iosevka Curly Slab", monospace;
+  }
+  a:hover {
+    background-color: #ead7ea;
+    color: black;
+  }
+  li > a {
+    display: block;
+  }
+  .nav > a {
+    display: inline-block;
+  }
+  section {
+    width: 100%;
+    max-width: 50em;
+  }
+  li::marker {
+    content: "⸸ ";
+    font-size: 1.2em;
+    transform: rotate(-90deg);
+  }
+  ul {
+    padding: 1.5em;
+  }
+</style>
