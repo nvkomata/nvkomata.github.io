@@ -1,9 +1,10 @@
 ---
 title: 'first post, one out of [undefined]'
 description: 'a wind comes and goes along with the crowd of crows, the ones that eat away the good meat'
-pubDate: 'Jul 27 2024'
-heroImage: '/blog/ellen_joe__by_aririnmorstan_dhqzf2v.jpg'
-heroAlt: 'Ellen Joe by aririnmorstan on DeviantArt'
+published_date: 'Jul 27 2024'
+updated_date: 'Jul 28 2024'
+post_image: '/blog/ellen_joe__by_aririnmorstan_dhqzf2v.jpg'
+post_image_alt: 'Ellen Joe by aririnmorstan on DeviantArt'
 ---
 
 # so you decided to make a blog, now what?
@@ -41,15 +42,15 @@ nah, wsup g?
 > extremely appropriate to use fedi for long long posts - posts akin to this one.
 >
 > maybe there's a topic i want to rant about,
-> so i'll just post here instead of cooking up something awkward on fedi. or i will make a video :3
+> so i'll just post here instead of cooking up something awkward on fedi. or i will make a video. :3
 
 ##### Q: what's your fedi?
 
->A: just [click here](https://akko.wtf/nvkomata) <3. you can follow me from your favorite mastodon/gt/akkoma/pleroma/misskey/sharkey/etc. instance.
+>A: just [click here](https://akko.wtf/nvkomata) <3. you can follow me from your favorite mastodon / gt / akkoma / pleroma / misskey / sharkey / any other fedi instance.
 
-### ...and now to test the delicious barf markdown is all about
+### ...and now to test the delicious barf markdown is all about 🥴
 
-fuck yeah! and it should be `github flavoured` too iirc. whatever that means, at least that's what's in the config lolz.
+fuck yeah! and it should be `github flavoured` too iirc. whatever that means, at least that's what's in the config lolololololol.
 
 [this is a rick roll](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
@@ -62,7 +63,7 @@ this is the mascot of DeviantArt, "fella"! what a silly little fella.
 ![an image of "fella" the deviantart mascot](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b999fc1c-f7c3-4fc3-a934-f87e7285bb1e/d204j47-53de3f04-05f6-4fa7-a2ba-5d79728ad737.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I5OTlmYzFjLWY3YzMtNGZjMy1hOTM0LWY4N2U3Mjg1YmIxZVwvZDIwNGo0Ny01M2RlM2YwNC0wNWY2LTRmYTctYTJiYS01ZDc5NzI4YWQ3MzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.4sBu1fu0NDnKdcv1wb0WHW0_jASIriqp6RXZra9aDKY)
 
 *__fun fact__: if you go to the "ellen_joe" tag on DeviantArt, you will see an abundance
-of art depicting pregnant ellen joe from ZZZ or ellen's feet. deviant art at it's finest.*
+of art depicting Ellen Joe from ZZZ as pregnant or her feet in high detail. deviant art at it's finest.* 🩷
 
 ### code block (BOOORINGGGGGG)
 

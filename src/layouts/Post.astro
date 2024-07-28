@@ -7,10 +7,16 @@ type Props = CollectionEntry<"blog">["data"];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, pubDate, updatedDate, heroImage, heroAlt } =
-  Astro.props;
+const {
+  title,
+  description,
+  published_date,
+  updated_date,
+  post_image,
+  post_image_alt,
+} = Astro.props;
 
-import "@fontsource/iosevka-curly-slab";
+import "@fontsource/iosevka-curly-slab"; // Iosevka is licensed under SIL OFL v1.1
 ---
 
 <!doctype html>
@@ -26,7 +32,7 @@ import "@fontsource/iosevka-curly-slab";
 
     <link rel="canonical" href={canonicalURL} />
 
-    <title>{title}</title>
+    <title>{title} // nvkomata's blog</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
 
@@ -40,21 +46,29 @@ import "@fontsource/iosevka-curly-slab";
     <main>
       <article>
         <div class="hero-image">
-          {heroImage && <img src={heroImage} alt={heroAlt} title={heroAlt} />}
+          {
+            post_image && (
+              <img
+                src={post_image}
+                alt={post_image_alt}
+                title={post_image_alt}
+              />
+            )
+          }
         </div>
         <div class="prose">
           <div class="title">
             <div class="date">
-              <FormattedDate date={pubDate} />
+              <FormattedDate date={published_date} />
               {
-                updatedDate && (
+                updated_date && (
                   <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
+                    Last updated on <FormattedDate date={updated_date} />
                   </div>
                 )
               }
             </div>
-            <h1>{title}</h1>
+            <h1 title={description}>{title}</h1>
 
             <hr />
           </div>
@@ -101,10 +115,11 @@ import "@fontsource/iosevka-curly-slab";
   }
   .prose {
     width: 720px;
-    max-width: calc(100% - 3em);
+    max-width: 80%;
     margin: auto;
     padding: 1.5em;
     margin-bottom: 5rem;
+    word-wrap: break-word;
   }
   .title {
     margin-bottom: 1em;
@@ -126,6 +141,8 @@ import "@fontsource/iosevka-curly-slab";
   }
   .last-updated-on {
     font-style: italic;
+    margin: 0.25em 0 1em 0;
+    font-size: 80%;
   }
   .post-nav {
     -webkit-backdrop-filter: blur(2em);
@@ -134,7 +151,12 @@ import "@fontsource/iosevka-curly-slab";
     padding: 0.5rem;
     position: sticky;
     top: 0;
-    margin-bottom: 2.5rem;
+    margin: 0 0 2.5rem -1em;
+  }
+  @media only screen and (max-width: 333px) {
+    .post-nav {
+      margin: 0 0 2.5rem 0;
+    }
   }
 </style>
 
