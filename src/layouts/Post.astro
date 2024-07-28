@@ -7,14 +7,8 @@ type Props = CollectionEntry<"blog">["data"];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const {
-  title,
-  description,
-  published_date,
-  updated_date,
-  post_image,
-  post_image_alt,
-} = Astro.props;
+const { title, description, pubDate, updatedDate, postImage, postImageAlt } =
+  Astro.props;
 
 import "@fontsource/iosevka-curly-slab"; // Iosevka is licensed under SIL OFL v1.1
 ---
@@ -47,23 +41,19 @@ import "@fontsource/iosevka-curly-slab"; // Iosevka is licensed under SIL OFL v1
       <article>
         <div class="hero-image">
           {
-            post_image && (
-              <img
-                src={post_image}
-                alt={post_image_alt}
-                title={post_image_alt}
-              />
+            postImage && (
+              <img src={postImage} alt={postImageAlt} title={postImageAlt} />
             )
           }
         </div>
         <div class="prose">
           <div class="title">
             <div class="date">
-              <FormattedDate date={published_date} />
+              <FormattedDate date={pubDate} />
               {
-                updated_date && (
+                updatedDate && (
                   <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updated_date} />
+                    Last updated on <FormattedDate date={updatedDate} />
                   </div>
                 )
               }
