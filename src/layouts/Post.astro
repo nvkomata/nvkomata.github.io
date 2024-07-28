@@ -10,7 +10,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, pubDate, updatedDate, postImage, postImageAlt } =
   Astro.props;
 
-import "@fontsource/iosevka-curly-slab"; // Iosevka is licensed under SIL OFL v1.1
+// Iosevka and Lora are licensed under SIL OFL
+import "@fontsource/iosevka-curly-slab";
+import "@fontsource/lora";
 ---
 
 <!doctype html>
