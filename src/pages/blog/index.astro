@@ -11,16 +11,19 @@ const posts = (await getCollection("blog")).sort(
 
 <Layout title="blog // nvkomata">
   <main>
-    <h1>nvkomata's blog</h1>
-    <p>
-      a fallen angel awaits the crushing love curse of the sealed demon's grasp.
-    </p>
-    <div class="nav">
-      <a href="https://akko.wtf/nvkomata">fedi (microblogs)</a>
-      <a href="/">go home</a>
-      <a href="/rss.xml">rss</a>
+    <div class="header">
+      <h1>nvkomata's blog</h1>
+      <p>
+        a fallen angel awaits the crushing love curse of the sealed demon's
+        grasp.
+      </p>
+      <div class="nav">
+        <a href="https://akko.wtf/nvkomata">fedi (microblogs)</a>
+        <a href="/">go home</a>
+        <a href="/rss.xml">rss</a>
+      </div>
+      <p>.˳·˖✶𓆩𓁺𓆪✶˖·˳.</p>
     </div>
-    <p>.˳·˖✶𓆩𓁺𓆪✶˖·˳.</p>
 
     <section>
       <ul>
@@ -57,13 +60,12 @@ const posts = (await getCollection("blog")).sort(
     padding: 0;
     overflow-x: hidden;
     background:
-      linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85)),
+      linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.8)),
       center / cover no-repeat fixed url("/walls/bg.jpg");
     min-height: 100vh;
   }
   main {
     margin: auto;
-    padding: 0 1rem;
     font-size: 15px;
     line-height: 1.6;
     display: flex;
@@ -71,9 +73,18 @@ const posts = (await getCollection("blog")).sort(
     flex-direction: column;
     user-select: none;
   }
-  main > p,
-  main > h1 {
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
+    backdrop-filter: blur(2em);
+    -webkit-backdrop-filter: blur(2em);
+    padding: 1rem 0;
+  }
+  .header > p, .header > h1 {
+    margin: 1em;
   }
   h1 {
     font-family: "Lora", serif;
@@ -110,7 +121,7 @@ const posts = (await getCollection("blog")).sort(
   }
   .nav > a {
     display: inline-block;
-    border-top: 1px solid #ead7ea70;
+    border-top: 1px solid #ead7ea36;
   }
   section {
     width: 100%;
@@ -124,6 +135,7 @@ const posts = (await getCollection("blog")).sort(
   ul {
     padding: 1.5em 0em 4.5em 1.5em;
     border-left: 1px solid #ead7ea;
+    margin: 0 0.5rem 0 1.5rem;
   }
   ul::after {
     content: "";
@@ -162,7 +174,7 @@ const posts = (await getCollection("blog")).sort(
   @media only screen and (max-width: 400px) {
     .nav > a {
       display: block;
-      border-top: 1px solid #ead7ea50;
+      border-top: 1px solid #ead7ea1c;
       text-align: center;
     }
     .nav {

@@ -274,7 +274,7 @@ import avatar from "../assets/avatar.png";
     flex-flow: column;
 
     video {
-      filter: blur(0.5em);
+      filter: blur(0.5em) grayscale(0.5);
       opacity: 0.2;
     }
 
@@ -292,7 +292,7 @@ import avatar from "../assets/avatar.png";
     flex-flow: column;
     background-color: black;
     background:
-      linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)),
+      linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.75)),
       center / cover no-repeat url("/walls/bg.jpg");
     text-align: center;
 
@@ -305,6 +305,8 @@ import avatar from "../assets/avatar.png";
       max-width: 50%;
       margin: 0 auto;
       transition: all 0.1s ease-out;
+      background-color: #00000090;
+      padding: 0 1.5em;
 
       &:hover {
         opacity: 0.5;
