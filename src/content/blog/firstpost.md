@@ -5,6 +5,7 @@ pubDate: 'Jul 27 2024'
 updatedDate: 'Jul 28 2024'
 postImage: 'https://nvkomata.github.io/images/ellen_joe__by_aririnmorstan_dhqzf2v.jpg'
 postImageAlt: 'Ellen Joe by aririnmorstan on DeviantArt'
+author: 'nvkomata'
 ---
 
 # so you decided to make a blog, now what?

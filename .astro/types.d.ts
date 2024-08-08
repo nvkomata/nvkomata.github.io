@@ -133,6 +133,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"stop-ignoring-jxl.md": {
+	id: "stop-ignoring-jxl.md";
+  slug: "stop-ignoring-jxl";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};
