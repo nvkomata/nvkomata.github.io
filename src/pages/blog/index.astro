@@ -128,15 +128,23 @@ const posts = (await getCollection("blog")).sort(
     width: 100%;
     max-width: 50em;
   }
-  li::marker {
-    content: "   —   ";
-    font-size: 1.2em;
-    transform: rotate(-90deg);
+  li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid #ead7ea;
+    width: 1.25rem;
+    margin-left: -2.075rem;
+    margin-top: 1em;
   }
   ul {
     padding: 1.5em 0em 4.5em 1.5em;
     border-left: 1px solid #ead7ea;
     margin: 0 0.5rem 0 1.5rem;
+
+    li {
+      list-style-type: none;
+    }
   }
   ul::after {
     content: "";

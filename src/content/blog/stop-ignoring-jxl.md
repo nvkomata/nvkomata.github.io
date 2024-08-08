@@ -1,7 +1,7 @@
 ---
 title: 'JPEG XL is here, stop ignoring it'
 description: 'ranting about jxl not getting the attention it deserves, while being superior'
-pubDate: 'Aug 8 2024'
+pubDate: 2024-08-08
 postImage: 'https://c.pxhere.com/images/6d/97/5d5b859f5fb5e3764deaffea927e-1583399.jpg!d'
 postImageAlt: "some kinda weird ocean eye image used in jxl branding, CC0. sorry for the low quality of it, as you can see - the source itself is bad lmao. i'll probably replace it eventually with something of my own"
 author: 'nvkomata'

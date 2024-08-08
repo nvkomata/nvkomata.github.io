@@ -1,8 +1,8 @@
 ---
 title: 'first post, one out of [undefined]'
 description: 'a wind comes and goes along with the crowd of crows, the ones that eat away the good meat'
-pubDate: 'Jul 27 2024'
-updatedDate: 'Jul 28 2024'
+pubDate: 2024-07-27
+updatedDate: 2024-07-28
 postImage: 'https://nvkomata.github.io/images/ellen_joe__by_aririnmorstan_dhqzf2v.jpg'
 postImageAlt: 'Ellen Joe by aririnmorstan on DeviantArt'
 author: 'nvkomata'
