@@ -1,10 +1,10 @@
 ---
-import { Icon } from 'astro-icon/components'
+import Icon from "./Icon.astro";
 
 interface Props {
 	href: string;
 	name: string;
-	icon?: string;
+	icon: string;
 	a?: string;
 }
 
@@ -12,7 +12,7 @@ const { href, name, icon, a } = Astro.props;
 ---
 
 <a rel="me" href={href} title={name} class={a} aria-label={icon}>
-	<Icon name={icon} />
+	<Icon icon={icon} />
 </a>
 <style>
 	a {
@@ -24,37 +24,34 @@ const { href, name, icon, a } = Astro.props;
 		height: 4em;
 		width: 4em;
 		padding: 0.5em;
-		color: white;
+		color: rgb(255, 244, 249);
 		text-decoration: none;
 		font-weight: normal;
 		transition: all 0.1s ease-out;
 		box-shadow: inset 0 0 0 1px rgba(111, 111, 111, 0.2);
 		border-radius: 100%;
 		backdrop-filter: saturate(200%) brightness(150%) blur(1.5em);
-		-webkit-backdrop-filter: saturate(200%) brightness(150%)  blur(1.5em);
+		-webkit-backdrop-filter: saturate(200%) brightness(150%) blur(1.5em);
 		background-color: rgba(28, 25, 30, 0.5);
 
 		svg {
-			fill: white;
+			fill: currentColor;
+			height: 50%;
+			width: auto;
+			margin: auto;
+			align-self: center;
 		}
 	}
 	a:hover {
 		background-color: white;
 
 		svg {
-			filter: invert();
+			fill: black;
 		}
 
 		cursor: pointer;
 	}
-	svg {
-		height: 50%;
-		width: auto;
-		margin: auto;
-		filter: none;
-		align-self: center;
-	}
-	
+
 	.invert {
 		.icon {
 			filter: invert();

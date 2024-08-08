@@ -6,193 +6,218 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
 );
 ---
 
 <Layout title="blog // nvkomata">
-  <main>
-    <div class="header">
-      <h1>nvkomata's blog</h1>
-      <p>
-        a fallen angel awaits the crushing love curse of the sealed demon's
-        grasp.
-      </p>
-      <div class="nav">
-        <a href="https://akko.wtf/nvkomata">fedi (microblogs)</a>
-        <a href="/">go home</a>
-        <a href="/rss.xml">rss</a>
-      </div>
-      <p>.˳·˖✶𓆩𓁺𓆪✶˖·˳.</p>
-    </div>
-
-    <section>
-      <ul>
-        {
-          posts.map((post) => (
-            <li>
-              <a href={`/blog/${post.slug}/`}>
-                <div>
-                  <h4 class="title">{post.data.title}</h4>
-                  <p class="description" title={post.data.description}>
-                    {post.data.description}
-                  </p>
-                  <p class="date">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
-                </div>
-                <img
-                  src={post.data.postImage}
-                  alt={post.data.postImageAlt}
-                  title={post.data.postImageAlt}
+    <main>
+        <div class="header">
+            <h1>nvkomata's blog</h1>
+            <p>
+                a fallen angel awaits the crushing love curse of the sealed
+                demon's grasp.
+            </p>
+            <div class="nav">
+                <Link
+                    href="https://akko.wtf/nvkomata"
+                    name="fedi (microblogs)"
+                    icon="fedi"
                 />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-  </main>
+                <Link href="/" name="go home" icon="home" />
+            </div>
+            <p>.˳·˖✶𓆩𓁺𓆪✶˖·˳.</p>
+        </div>
+
+        <section>
+            <ul>
+                {
+                    posts.map((post) => (
+                        <li>
+                            <a href={`/blog/${post.slug}/`}>
+                                <div>
+                                    <h4 class="title">{post.data.title}</h4>
+                                    <p
+                                        class="description"
+                                        title={post.data.description}
+                                    >
+                                        {post.data.description}
+                                    </p>
+                                    <p class="date">
+                                        <FormattedDate
+                                            date={post.data.published}
+                                        />
+                                    </p>
+                                </div>
+                                <img
+                                    src={post.data.postimage}
+                                    alt={post.data.postimagealt}
+                                    title={post.data.postimagealt}
+                                />
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </main>
 </Layout>
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background:
-      linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.8)),
-      center / cover no-repeat fixed url("/walls/bg.jpg");
-    min-height: 100vh;
-  }
-  main {
-    margin: auto;
-    font-size: 15px;
-    line-height: 1.6;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    user-select: none;
-  }
-  .header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    backdrop-filter: blur(2em);
-    -webkit-backdrop-filter: blur(2em);
-    padding: 1rem 0;
-  }
-  .header > p, .header > h1 {
-    margin: 1em;
-  }
-  h1 {
-    font-family: "Lora", serif;
-    font-weight: normal;
-    letter-spacing: 0em;
-    transform: scaleY(1.25);
-    font-size: 40px;
-  }
-  a {
-    user-select: none;
-    padding: 0.5em 1.25em;
-    color: #ead7ea;
-    text-decoration: none;
-    font-weight: normal;
-    transition: all 0.1s ease-out;
-    font-family: "Iosevka Curly Slab", monospace;
-  }
-  a:hover {
-    background-color: #ead7ea;
-    color: black;
-  }
-  li > a {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0.5em 0.5em 0.5em 1em;
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.8)),
+            center / cover no-repeat fixed url("/walls/bg.jpg");
+        min-height: 100vh;
+    }
+    main {
+        margin: auto;
+        font-size: 15px;
+        line-height: 1.6;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        user-select: none;
+    }
+    .header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        backdrop-filter: blur(2em);
+        -webkit-backdrop-filter: blur(2em);
+        padding: 1rem 0;
+    }
+    .header > p,
+    .header > h1 {
+        margin: 1em;
+    }
+    h1 {
+        font-family: "Lora", serif;
+        font-weight: normal;
+        letter-spacing: 0em;
+        transform: scaleY(1.25);
+        font-size: 250%;
+        font-style: italic;
+    }
+    a {
+        user-select: none;
+        padding: 0.5em 1.25em;
+        color: #ead7ea;
+        text-decoration: none;
+        font-weight: normal;
+        transition: all 0.1s ease-out;
+        font-family: "Iosevka Curly Slab", monospace;
+        border-radius: 0.75em;
+    }
+    a:hover {
+        background-color: #ead7ea;
+        color: black;
+    }
+    li > a {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5em 0.5em 0.5em 1em;
 
-    img {
-      height: auto;
-      max-width: 35%;
-      object-fit: cover;
-      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+        img {
+            height: auto;
+            max-width: 35%;
+            object-fit: cover;
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+            border-radius: 0 0.5rem 0.5rem 0;
+            margin-right: -0.015em;
+        }
     }
-  }
-  .nav > a {
-    display: inline-block;
-    border-top: 1px solid #ead7ea36;
-  }
-  section {
-    width: 100%;
-    max-width: 50em;
-  }
-  li::before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-bottom: 1px solid #ead7ea;
-    width: 1.25rem;
-    margin-left: -2.075rem;
-    margin-top: 1em;
-  }
-  ul {
-    padding: 1.5em 0em 4.5em 1.5em;
-    border-left: 1px solid #ead7ea;
-    margin: 0 0.5rem 0 1.5rem;
-
-    li {
-      list-style-type: none;
-    }
-  }
-  ul::after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-bottom: 1px solid #ead7ea;
-    width: 5em;
-    margin-left: -4em;
-    margin-top: 1em;
-  }
-  h4 {
-    font-family: "Lora", serif;
-  }
-  .description {
-    opacity: 0.7;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    max-width: 25em;
-    word-wrap: break-word;
-  }
-  .date {
-    text-transform: uppercase;
-  }
-  @media only screen and (max-width: 700px) {
-    .description {
-      -webkit-line-clamp: 1;
-    }
-  }
-  @media only screen and (max-width: 500px) {
-    .description {
-      display: none;
-    }
-  }
-  @media only screen and (max-width: 400px) {
     .nav > a {
-      display: block;
-      border-top: 1px solid #ead7ea1c;
-      text-align: center;
+        display: inline-block;
+        border-top: 1px solid #ead7ea36;
+        color: #ead7ea;
     }
-    .nav {
-      width: 80%;
+    section {
+        width: 100%;
+        max-width: 50em;
     }
-  }
-  @media only screen and (max-width: 333px) {
-    li img {
-      display: none;
+    li::before {
+        content: "";
+        display: block;
+        position: absolute;
+        border-bottom: 1px solid #ead7ea;
+        width: 1.25rem;
+        margin-left: -2.075rem;
+        margin-top: 1em;
     }
-  }
+    ul {
+        padding: 1.5em 0em 4.5em 1.5em;
+        border-left: 1px solid #ead7ea;
+        margin: 0 0.5rem 0 1.5rem;
+
+        li {
+            list-style-type: none;
+        }
+    }
+    ul::after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-bottom: 1px solid #ead7ea;
+        width: 5em;
+        margin-left: -4em;
+        margin-top: 1em;
+    }
+    h4 {
+        font-family: "Lora", serif;
+    }
+    .description {
+        opacity: 0.7;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-width: 25em;
+        word-wrap: break-word;
+    }
+    .date {
+        text-transform: uppercase;
+    }
+    @media only screen and (max-width: 700px) {
+        .description {
+            -webkit-line-clamp: 1;
+        }
+    }
+    @media only screen and (max-width: 500px) {
+        .description {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        .nav > a {
+            display: block;
+            border-top: 1px solid #ead7ea1c;
+            text-align: center;
+        }
+        .nav {
+            width: 80%;
+        }
+    }
+    @media only screen and (max-width: 333px) {
+        li img {
+            display: none;
+        }
+        h1 {
+            font-size: 175%;
+        }
+    }
+</style>
+
+<style is:global>
+    .header .nav a {
+        color: #ead7ea;
+        height: 3em;
+        width: 3em;
+    }
 </style>

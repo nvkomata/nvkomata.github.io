@@ -1,11 +1,11 @@
 ---
 title: 'first post, one out of [undefined]'
 description: 'a wind comes and goes along with the crowd of crows, the ones that eat away the good meat'
-pubDate: 2024-07-27
-updatedDate: 2024-07-28
-postImage: 'https://nvkomata.github.io/images/ellen_joe__by_aririnmorstan_dhqzf2v.jpg'
-postImageAlt: 'Ellen Joe by aririnmorstan on DeviantArt'
+published: 2024-07-27
+edited: 2024-07-28
 author: 'nvkomata'
+postimage: 'https://nvkomata.github.io/images/ellen_joe__by_aririnmorstan_dhqzf2v.jpg'
+postimagealt: 'Ellen Joe by aririnmorstan on DeviantArt'
 ---
 
 # so you decided to make a blog, now what?

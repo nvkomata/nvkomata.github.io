@@ -1,12 +1,11 @@
 import { defineConfig } from "astro/config";
 
-import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://nvkomata.github.io",
-  integrations: [icon(), sitemap()],
+  integrations: [sitemap()],
   markdown: {
     gfm: true,
     shikiConfig: {
