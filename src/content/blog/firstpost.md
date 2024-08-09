@@ -4,8 +4,8 @@ description: 'a wind comes and goes along with the crowd of crows, the ones that
 published: 2024-07-27
 edited: 2024-07-28
 author: 'nvkomata'
-postimage: 'https://nvkomata.github.io/images/ellen_joe__by_aririnmorstan_dhqzf2v.jpg'
-postimagealt: 'Ellen Joe by aririnmorstan on DeviantArt'
+image: 'https://nvkomata.github.io/images/ellen_joe__by_aririnmorstan_dhqzf2v.jpg'
+imagealt: 'Ellen Joe by aririnmorstan on DeviantArt'
 ---
 
 # so you decided to make a blog, now what?

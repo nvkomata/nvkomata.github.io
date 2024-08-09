@@ -7,8 +7,8 @@ type Props = CollectionEntry<"blog">["data"];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, published, edited, postimage, postimagealt, author } =
-  Astro.props;
+const { title, description, published, edited, image, imagealt, author } =
+    Astro.props;
 
 // Iosevka and Lora are licensed under SIL OFL
 import "@fontsource/iosevka-curly-slab";
@@ -17,212 +17,213 @@ import "@fontsource/lora";
 
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <link rel="shortcut icon" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <meta name="generator" content={Astro.generator} />
+        <meta name="generator" content={Astro.generator} />
 
-    <link rel="canonical" href={canonicalURL} />
+        <link rel="canonical" href={canonicalURL} />
 
-    <title>{title} // nvkomata's blog</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
+        <title>{title} // nvkomata's blog</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-  </head>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+    </head>
 
-  <body>
-    <main>
-      <article>
-        <div class="hero-image">
-          {
-            postimage && (
-              <img src={postimage} alt={postimagealt} title={postimagealt} />
-            )
-          }
-        </div>
-        <div class="prose">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={published} />
-              {
-                edited && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={edited} />
-                  </div>
-                )
-              }
-            </div>
-            <h1 title={description}>{title}</h1>
+    <body>
+        <main>
+            <article>
+                <div class="hero-image">
+                    {
+                        image && (
+                            <img src={image} alt={imagealt} title={imagealt} />
+                        )
+                    }
+                </div>
+                <div class="prose">
+                    <div class="title">
+                        <div class="date">
+                            <FormattedDate date={published} />
+                            {
+                                edited && (
+                                    <div class="last-updated-on">
+                                        Last updated on{" "}
+                                        <FormattedDate date={edited} />
+                                    </div>
+                                )
+                            }
+                        </div>
+                        <h1 title={description}>{title}</h1>
 
-            <hr />
-          </div>
-          <div class="post-nav">
-            <a href="/blog">‹ back to blog index</a>
-          </div>
-          <slot />
-          <div class="signature">
-            — {author}
-          </div>
-        </div>
-      </article>
-    </main>
-  </body>
+                        <hr />
+                    </div>
+                    <div class="post-nav">
+                        <a href="/blog">‹ back to blog index</a>
+                    </div>
+                    <slot />
+                    <div class="signature">
+                        — {author}
+                    </div>
+                </div>
+            </article>
+        </main>
+    </body>
 </html>
 
 <style>
-  body {
-    margin: 0;
-    background: repeating-linear-gradient(
-      65deg,
-      #010101,
-      #020202 10px,
-      black 10px,
-      black 20px
-    );
-  }
-  main {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
-  hr {
-    opacity: 0.2;
-    border-color: #ead7ea;
-  }
-  .hero-image {
-    width: 100%;
-  }
-  .hero-image img {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 100%;
-    max-height: 45vh;
-    object-fit: cover;
-  }
-  .prose {
-    width: 720px;
-    max-width: 80%;
-    margin: auto;
-    padding: 1.5em;
-    margin-bottom: 5rem;
-    word-wrap: break-word;
-  }
-  .title {
-    padding: 1em 0;
-    text-align: center;
-    line-height: 1;
-  }
-  .title h1 {
-    margin: 0 0 1.5em 0;
-    font-family: "Lora", serif;
-    font-weight: normal;
-    letter-spacing: 0em;
-    transform: scaleY(1.25);
-    font-size: 30px;
-  }
-  .date {
-    margin-bottom: 0.5em;
-    font-family: "Iosevka Curly Slab", monospace;
-  }
-  .last-updated-on {
-    font-style: italic;
-    margin: 0.25em 0 1em 0;
-    font-size: 80%;
-  }
-  .post-nav {
-    -webkit-backdrop-filter: blur(2em);
-    backdrop-filter: blur(2em);
-    background-color: #000000a4;
-    padding: 0.5rem;
-    position: sticky;
-    top: 0;
-    margin: 0 0 1rem -1em;
-    display: flex;
-    justify-content: flex-end;
-    border-radius: 0 0 1rem 1rem;
-
-    a {
-      padding: 0.15em 0.35em;
+    body {
+        margin: 0;
+        background: repeating-linear-gradient(
+            65deg,
+            #010101,
+            #020202 10px,
+            black 10px,
+            black 20px
+        );
     }
-  }
-  .signature {
-    text-align: right;
-    padding: 1.25em 1.5em;
-  }
-  @media only screen and (max-width: 333px) {
-    .post-nav {
-      margin: 0 0 2.5rem 0;
+    main {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
-  }
-  @media screen and (min-width: 700px) {
+    hr {
+        opacity: 0.2;
+        border-color: #ead7ea;
+    }
+    .hero-image {
+        width: 100%;
+    }
+    .hero-image img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        max-height: 45vh;
+        object-fit: cover;
+    }
     .prose {
-      width: 55%;
+        width: 720px;
+        max-width: 80%;
+        margin: auto;
+        padding: 1.5em;
+        margin-bottom: 5rem;
+        word-wrap: break-word;
     }
-  }
+    .title {
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1;
+    }
+    .title h1 {
+        margin: 0 0 1.5em 0;
+        font-family: "Lora", serif;
+        font-weight: normal;
+        letter-spacing: 0em;
+        transform: scaleY(1.25);
+        font-size: 30px;
+    }
+    .date {
+        margin-bottom: 0.5em;
+        font-family: "Iosevka Curly Slab", monospace;
+    }
+    .last-updated-on {
+        font-style: italic;
+        margin: 0.25em 0 1em 0;
+        font-size: 80%;
+    }
+    .post-nav {
+        -webkit-backdrop-filter: blur(2em);
+        backdrop-filter: blur(2em);
+        background-color: #000000a4;
+        padding: 0.5rem;
+        position: sticky;
+        top: 0;
+        margin: 0 0 1rem -1em;
+        display: flex;
+        justify-content: flex-end;
+        border-radius: 0 0 1rem 1rem;
+
+        a {
+            padding: 0.15em 0.35em;
+        }
+    }
+    .signature {
+        text-align: right;
+        padding: 1.25em 1.5em;
+    }
+    @media only screen and (max-width: 333px) {
+        .post-nav {
+            margin: 0 0 2.5rem 0;
+        }
+    }
+    @media screen and (min-width: 700px) {
+        .prose {
+            width: 55%;
+        }
+    }
 </style>
 
 <style is:global>
-  html {
-    font-family: system-ui;
-    background-color: black;
-    color: #ead7ea;
-  }
-  .astro-code {
-    padding: 1em;
-    font-size: 15px;
-  }
-  code {
-    font-size: 15px;
-    padding: 0.2em;
-    font-family: "Iosevka Curly Slab", monospace;
-  }
-  .astro-code > code {
-    padding: 0;
-  }
+    html {
+        font-family: system-ui;
+        background-color: black;
+        color: #ead7ea;
+    }
+    .astro-code {
+        padding: 1em;
+        font-size: 15px;
+    }
+    code {
+        font-size: 15px;
+        padding: 0.2em;
+        font-family: "Iosevka Curly Slab", monospace;
+    }
+    .astro-code > code {
+        padding: 0;
+    }
 
-  a {
-    color: #a8f0f7;
-    text-decoration: none;
-    font-weight: normal;
-    transition: all 0.1s ease-out;
-  }
-  a:hover {
-    background-color: #a8f0f7;
-    color: black;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: "Lora", serif;
-    line-height: 1.6;
-  }
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
-  input {
-    font-size: 16px;
-  }
-  table {
-    width: 100%;
-  }
-  img {
-    max-width: calc(100% - 3em);
-    height: auto;
-  }
-  blockquote {
-    border-left: 4px solid #ead7ea70;
-    padding: 0 0 0 1.25rem;
-    margin: 0px;
-  }
+    a {
+        color: #a8f0f7;
+        text-decoration: none;
+        font-weight: normal;
+        transition: all 0.1s ease-out;
+    }
+    a:hover {
+        background-color: #a8f0f7;
+        color: black;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: "Lora", serif;
+        line-height: 1.6;
+    }
+    textarea {
+        width: 100%;
+        font-size: 16px;
+    }
+    input {
+        font-size: 16px;
+    }
+    table {
+        width: 100%;
+    }
+    img {
+        max-width: calc(100% - 3em);
+        height: auto;
+    }
+    blockquote {
+        border-left: 4px solid #ead7ea70;
+        padding: 0 0 0 1.25rem;
+        margin: 0px;
+    }
 </style>

@@ -9,8 +9,8 @@ const blog = defineCollection({
     // Transform string to Date object
     published: z.coerce.date(),
     edited: z.coerce.date().optional(),
-    postimage: z.string().optional(),
-    postimagealt: z.string().optional(),
+    image: z.string().optional(),
+    imagealt: z.string().optional(),
     author: z.string(),
   }),
 });
