@@ -2,64 +2,22 @@
 import Icon from "./Icon.astro";
 
 interface Props {
-	href: string;
-	name: string;
-	icon: string;
-	a?: string;
+    href: string;
+    name: string;
+    icon: string;
 }
 
-const { href, name, icon, a } = Astro.props;
+const { href, name, icon } = Astro.props;
 ---
 
-<a rel="me" href={href} title={name} class={a} aria-label={icon}>
-	<Icon icon={icon} />
+<a
+    rel="me"
+    href={href}
+    title={name}
+    aria-label={icon}
+    class="w-16 h-16 p-2 fill-current transition-all rounded-full backdrop-blur-md backdrop-saturate-200 bg-zinc-900/50 border border-zinc-400/20 text-red-100 select-none inline-flex items-center justify-center hover:bg-red-50 hover:text-zinc-950"
+>
+    <div class="w-3/5 h-3/5 self-center">
+        <Icon icon={icon} />
+    </div>
 </a>
-<style>
-	a {
-		display: inline-flex;
-		align-content: center;
-		align-items: center;
-
-		user-select: none;
-		height: 4em;
-		width: 4em;
-		padding: 0.5em;
-		color: rgb(255, 244, 249);
-		text-decoration: none;
-		font-weight: normal;
-		transition: all 0.1s ease-out;
-		box-shadow: inset 0 0 0 1px rgba(111, 111, 111, 0.2);
-		border-radius: 100%;
-		backdrop-filter: saturate(200%) brightness(150%) blur(1.5em);
-		-webkit-backdrop-filter: saturate(200%) brightness(150%) blur(1.5em);
-		background-color: rgba(28, 25, 30, 0.5);
-
-		svg {
-			fill: currentColor;
-			height: 50%;
-			width: auto;
-			margin: auto;
-			align-self: center;
-		}
-	}
-	a:hover {
-		background-color: white;
-
-		svg {
-			fill: black;
-		}
-
-		cursor: pointer;
-	}
-
-	.invert {
-		.icon {
-			filter: invert();
-		}
-		:hover {
-			.icon {
-				filter: none;
-			}
-		}
-	}
-</style>

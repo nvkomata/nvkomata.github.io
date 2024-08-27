@@ -1,466 +1,155 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Link from "../components/Link.astro";
-import LinkButton from "../components/LinkButton.astro";
-import Places from "../components/Places.astro";
 
-import { Image } from "astro:assets";
-import logoImg from "../assets/logo.svg";
-import avatar from "../assets/avatar.png";
+import Link from "../components/Link.astro";
+import Icon from "../components/Icon.astro";
 ---
 
-<Layout title="nvkomata">
-    <section class="landing-section">
-        <div class="main">
-            <Image src={logoImg} alt="nvkomata" class="logo" loading="eager" />
-            <div class="links">
-                <Link
-                    href="https://linktr.ee/nvkomata"
-                    name="see my links on linktree"
-                    icon="linktree"
-                />
-                <Link
-                    href="https://www.youtube.com/@nvkomata"
-                    name="watch my videos on youtube"
-                    icon="youtube"
-                />
-                <Link
-                    href="https://akko.wtf/nvkomata"
-                    name="follow me on fedi"
-                    icon="fedi"
-                />
-            </div>
-            <p>amateur vtuber & graphic designer <span>💮🩷🖤🩷</span></p>
-            <p title="pronouns">
-                <a href="https://en.pronouns.page/@nvkomata">she/her</a>
-            </p>
-        </div>
-
-        <video
-            class="section-bg"
-            autoplay
-            loop
-            muted
-            playsinline
-            disablepictureinpicture
-            poster="poster.jpg"
+<Layout title="NVKOMATA" class="bg-zero bg-cover bg-center">
+    <main
+        class="select-none p-8 z-[300] absolute bottom-[30%] right-0 text-right"
+    >
+        <h1
+            class="font-serif scale-y-125 text-5xl md:text-6xl lg:text-7xl uppercase drop-shadow-xl"
         >
-            <source src="main.mp4" />
-        </video>
-    </section>
-    <section class="info-section">
-        <div class="box-wrapper">
-            <div class="box">
-                <h1>hi!</h1>
-                <div>
-                    <p>
-                        I enjoy VR a lot, linux & FOSS, gaming, art - be it
-                        making or viewing, anime, music <i
-                            >(especially metal and rock)</i
-                        >, graphic design, poetry - and put out some stuff based
-                        on that.
-                    </p>
-                    <p>want to show support?:</p>
+            nvkomata
+        </h1>
+        <p class="drop-shadow-xl my-4">
+            amateur vtuber and design connoisseur 🥀
+        </p>
+        <nav class="select-none">
+            <Link
+                href="https://linktr.ee/nvkomata"
+                name="see my links on linktree"
+                icon="linktree"
+            />
+            <Link
+                href="https://www.youtube.com/@nvkomata"
+                name="watch my videos on youtube"
+                icon="youtube"
+            />
+            <Link
+                href="https://akko.wtf/nvkomata"
+                name="follow me on fedi"
+                icon="fedi"
+            />
+        </nav>
+        <div class="flex flex-row items-center max-w-max gap-2 ml-auto">
+            <a
+                class="select-none rounded-3xl max-w-max inline-flex gap-2 items-center py-2 px-4 font-monoer max-w-max ml-auto my-4 transition-all bg-zinc-800/30 hover:bg-red-400/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+                href="https://ko-fi.com/nvkomata"
+            >
+                <div class="fill-current h-4 w-4">
+                    <Icon icon="kofi" />
                 </div>
-                <LinkButton
-                    href="https://ko-fi.com/nvkomata"
-                    text="Support me on Ko-fi"
-                    icon="kofi"
-                />
-            </div>
-            <Image src={avatar} alt="avi" class="avatar" loading="eager" />
+                <span>support</span>
+            </a>
+            <a
+                class="select-none rounded-3xl max-w-max inline-flex py-2 px-4 font-monoer max-w-max ml-auto my-4 transition-all bg-zinc-800/30 hover:bg-red-200/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+                href="https://en.pronouns.page/@nvkomata">she/her</a
+            >
+            <a
+                class="select-none rounded-3xl max-w-max inline-flex py-2 px-4 font-monoer max-w-max ml-auto my-4 transition-all bg-zinc-800/30 hover:bg-purple-300/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+                href="https://mov.im/blog/nvkomata@jabber.absturztau.be">blog</a
+            >
         </div>
-    </section>
-
-    <section class="places-section half">
-        <h1>buttons</h1>
-
-        <Places />
-
-        <video
-            class="section-bg"
-            autoplay
-            loop
-            muted
-            disablepictureinpicture
-            poster="walls/oyasumi.jpg"
-        >
-            <script is:inline>
-                const srcs = ["chainsawmanedit.mp4"];
-
-                const random = Math.floor(Math.random() * srcs.length);
-
-                document.write(
-                    "<source src='" + srcs[random] + "' type='video/mp4'",
-                );
-            </script>
-        </video>
-    </section>
-
-    <section class="blog-section half">
-        <h1>read my blog</h1>
-        <p>hey, take a look! i ramble a bunch in here</p>
-        <a href="https://mov.im/blog/nvkomata@jabber.absturztau.be"><p>take me there ›</p></a>
-    </section>
-
-    <footer>
-        <Image
-            src="https://moe-counter.glitch.me/get/@nvkosite?theme=rule34"
+    </main>
+    <footer
+        class="select-none z-[300] absolute bottom-0 text-center w-full p-4 pt-0 text-zinc-300 text-xs before:absolute before:inset-0 before:w-screen before:backdrop-blur-xl before:-z-10 before:[-webkit-mask:_linear-gradient(180deg,_transparent,_black_50%)]"
+    >
+        <img
+            src="https://count.getloli.com/get/@nvkosite?theme=asoul"
             alt=""
             title="thanks for visiting"
-            class="counter"
-            width="315"
-            height="100"
+            class="w-52 h-auto mx-auto my-4"
         />
-        <p>
+        <p class="my-2 drop-shadow-xl">
             If you find any broken links or bugs on
             <a href="https://github.com/nvkomata/nvkomata.github.io"
                 >this website</a
             >, do not contact me. I do not care, thank you.
         </p>
-        <p>
-            <script type="text/javascript" is:inline>
-                var year = new Date();
-                document.write("&copy; " + year.getFullYear() + " nvkomata");
-            </script>
-        </p>
+        <script type="text/javascript" is:inline>
+            var year = new Date();
+            document.write("&copy; " + year.getFullYear() + " nvkomata");
+        </script>
     </footer>
+
+    <div
+        class="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+    >
+        <div
+            class="w-screen h-screen absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+            id="layer-1"
+        >
+            <img
+                class="select-none absolute bottom-0 scale-125 brightness-50"
+                src="layer1.png"
+                alt=""
+            />
+            <div
+                class="w-[90vw] h-[90vh] z-50 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                id="layer-2"
+            >
+                <p class="z-10 absolute font-mono text-sm block w-1/4 p-2">
+                    あなたが見るものは <br /> あなたが得るものです <br> /ᐠ - ˕ -マ Ⳋ
+                </p>
+            </div>
+            <div
+                class="w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                id="layer-3"
+            >
+                <img
+                    class="select-none absolute bottom-0 scale-125 brightness-75"
+                    src="layer2.png"
+                    alt=""
+                />
+            </div>
+            <img
+                class="object-cover select-none pointer-events-none z-[200] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                src="avi.png"
+                id="layer-4"
+                alt=""
+            />
+        </div>
+    </div>
+
+    <script is:inline>
+        window.onload = function () {
+            var wrapper = document.getElementsByTagName("body")[0],
+                layerOne = document.querySelector("#layer-1"),
+                layerTwo = document.querySelector("#layer-2"),
+                layerThree = document.querySelector("#layer-3"),
+                layerFour = document.querySelector("#layer-4");
+
+            wrapper.addEventListener("mousemove", function (e) {
+                var pageX = e.clientX - window.innerWidth / 2,
+                    pageY = e.clientY - window.innerHeight / 2;
+                layerOne.style.transform =
+                    "translateX(-" +
+                    (50 + pageX / 200) +
+                    "%) translateY(-" +
+                    (50 + pageY / 200) +
+                    "%)";
+                layerTwo.style.transform =
+                    "translateX(-" +
+                    (50 + pageX / 1000) +
+                    "%) translateY(-" +
+                    (50 + pageY / 1000) +
+                    "%)";
+                layerThree.style.transform =
+                    "translateX(-" +
+                    (50 + pageX / 400) +
+                    "%) translateY(-" +
+                    (50 + pageY / 400) +
+                    "%)";
+                layerFour.style.transform =
+                    "translateX(-" +
+                    (50 + pageX / 100) +
+                    "%) translateY(-" +
+                    (50 + pageY / 100) +
+                    "%)";
+            });
+        };
+    </script>
 </Layout>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-    .hidden {
-        display: none;
-    }
-
-    .section-bg {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        pointer-events: none;
-        z-index: -1000;
-        position: absolute;
-    }
-    section {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    section.half {
-        height: 50vh;
-        min-height: 50vh;
-    }
-
-    code,
-    pre {
-        font-family: "Iosevka Curly Slab", monospace;
-    }
-
-    .bg-initial {
-        opacity: 0.7;
-    }
-
-    .landing-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-height: 100vh;
-        width: 100vw;
-
-        .section-bg {
-            opacity: 0.7;
-        }
-    }
-
-    div.main {
-        max-width: 50%;
-        position: absolute;
-        right: 5%;
-        bottom: 5%;
-        text-align: right;
-
-        p {
-            margin: 1em;
-
-            max-width: max-content;
-            margin-left: auto;
-            padding: 0.25rem;
-
-            text-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.4);
-
-            span {
-                display: inline-block;
-            }
-        }
-        p[title="pronouns"] {
-            letter-spacing: 0.35em;
-            font-family: "Iosevka Curly Slab", monospace;
-            background-color: #00000050;
-        }
-    }
-
-    .logo {
-        pointer-events: none;
-        max-width: 80%;
-        height: auto;
-        filter: invert();
-        user-select: none;
-    }
-
-    .counter {
-        max-width: max-content;
-        width: 100%;
-        max-height: fit-content;
-        user-select: none;
-        margin: 1em auto;
-    }
-
-    .links {
-        cursor: default;
-        user-select: none;
-    }
-
-    .info-section {
-        background:
-            linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35)),
-            center / cover no-repeat url("/walls/eternalskies.jpg");
-        width: 100vw;
-        min-height: 100vh;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .box {
-            padding: 3em 3em 5.5em 3em;
-            margin: 1em;
-
-            max-width: 26vw;
-            max-height: 80vh;
-
-            z-index: 2;
-
-            font-size: 120%;
-
-            text-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.4);
-        }
-        .box-wrapper {
-            width: 80vw;
-            height: 100vh;
-            position: absolute;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        p {
-            padding-bottom: 1em;
-        }
-        h1 {
-            font-size: 300%;
-        }
-
-        overflow-x: hidden;
-    }
-
-    .avatar {
-        height: 80%;
-        width: auto;
-    }
-
-    .places-section {
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-        flex-flow: column;
-
-        video {
-            filter: blur(0.5em) grayscale(0.5);
-            opacity: 0.2;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 3.5em;
-            text-shadow: 0 0.1em 1em black;
-        }
-    }
-
-    .blog-section {
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-        flex-flow: column;
-        background-color: black;
-        background:
-            linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.75)),
-            center / cover no-repeat url("/walls/bg.jpg");
-        text-align: center;
-
-        h1 {
-            font-size: 3.5em;
-            text-shadow: 0 0.1em 1em black;
-        }
-
-        a {
-            max-width: 50%;
-            margin: 0 auto;
-            transition: all 0.1s ease-out;
-            background-color: #00000090;
-            padding: 0 1.5em;
-
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .background-video {
-        min-height: 100vh;
-        min-width: 100vw;
-        opacity: 0.35;
-        position: fixed;
-        z-index: -1;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-    }
-    .places img {
-        width: auto;
-    }
-
-    hr {
-        width: 50%;
-        opacity: 0.3;
-    }
-
-    footer {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        user-select: none;
-        color: rgba(255, 255, 255, 0.5);
-        background-color: #000000aa;
-
-        backdrop-filter: saturate(80%) blur(1.5em) brightness(0.7);
-        -webkit-backdrop-filter: saturate(80%) blur(1.5em) brightness(0.7);
-
-        overflow: hidden;
-        font-size: 0.7em;
-        margin: 2em 0 0 0;
-        padding: 1em 0 3em 0;
-    }
-    footer > p {
-        margin: 0.75em;
-    }
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    h1 {
-        font-family: "Lora", serif;
-        font-weight: normal;
-        letter-spacing: 0em;
-        transform: scaleY(1.25);
-    }
-
-    @media only screen and (min-width: 3000px) {
-        body {
-            font-size: 120%;
-        }
-    }
-
-    @media only screen and (max-width: 1440px) {
-        .info-section {
-            .box {
-                padding: 1em 2em 2.5em 2em;
-            }
-        }
-    }
-
-    @media only screen and (max-width: 1040px) {
-        .landing-section div.main {
-            max-width: 75%;
-        }
-        .info-section {
-            flex-direction: column;
-
-            .box {
-                max-width: 60%;
-                margin: 1em auto;
-                padding: 1.5em 3em 3.5em 3em;
-
-                [role="button"] {
-                    width: 100%;
-                    max-width: calc(100% - 3em);
-                    text-align: center;
-                }
-            }
-            .box-wrapper {
-                display: flex;
-                position: initial;
-                width: initial;
-                height: initial;
-                justify-content: center;
-                flex-direction: column;
-            }
-
-            height: min-content;
-        }
-        .avatar {
-            height: 60vh;
-            margin: auto;
-        }
-    }
-    @media only screen and (max-width: 764px) {
-        .info-section {
-            .box {
-                max-width: 100%;
-                border: none;
-                border-radius: none;
-            }
-        }
-        .moment {
-            iframe {
-                width: 100vw;
-                height: 50vw;
-            }
-        }
-    }
-    @media only screen and (max-height: 800px) {
-        .info-section {
-            .box {
-                font-size: 90%;
-            }
-        }
-        .moment {
-            display: none;
-        }
-    }
-    @media only screen and (max-height: 500px) {
-        .info-section {
-            .box {
-                backdrop-filter: none;
-                -webkit-backdrop-filter: none;
-                border: none;
-            }
-        }
-        .places-section {
-            h1 {
-                display: none;
-            }
-        }
-    }
-</style>
