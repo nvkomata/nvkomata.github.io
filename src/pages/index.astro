@@ -119,18 +119,23 @@ import Buttons from "../components/Buttons.astro";
                 class="w-[90vw] h-[90vh] z-50 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                 id="layer-2"
             >
-                <p
-                    class="z-10 absolute font-mono text-sm block w-1/4 p-2 min-w-32 mt-4"
-                >
+                <p class="z-10 font-mono text-sm block w-1/4 p-2 min-w-32 mt-4">
                     こんにちは訪問者 <br />
                     <span class="inline-block">/ᐠ - ˕ -マ</span>
                     <br />
+                </p>
+                <div class="z-10 p-2 max-w-max border border-transparent group hover:border-slate-50/30 hover:shadow-xl transition-all">
                     <img
                         src="https://nvkomata.github.io/button/nvkomata.gif"
                         alt="nvkomata"
-                        class="w-[64px] h-auto opacity-50 hover:opacity-100 transition-opacity"
+                        class="[image-rendering:_pixelated] w-[88px] h-auto opacity-50 group-hover:opacity-100 group-hover:w-[176px] transition-all"
                     />
-                </p>
+                    <textarea id="buttoncode" class="resize-none bg-zinc-900/50 text-xs p-2 font-mono opacity-0 group-hover:opacity-100 transition-all w-full h-32 text-justify" onclick="this.select()" readonly></textarea>
+                    <script is:inline>
+                        const buttoncode = document.getElementById("buttoncode")
+                        buttoncode.innerHTML = `<a href="https://nvkomata.github.io/" target="_blank"><img src="https://nvkomata.github.io/button/nvkomata.gif"></a>`
+                    </script>
+                </div>
             </div>
             <div
                 class="w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
