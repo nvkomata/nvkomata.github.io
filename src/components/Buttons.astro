@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+
+const buttons = [
+    '<a href="https://amemoia.nekoweb.org/" target="_blank"><img src="https://amemoia.nekoweb.org/resources/buttons/amemoia.png"></a>',
+    '<a href="https://i1vy.moe/" target="_blank"><img src="https://stuff.i1vy.moe/88x31.png" /></a>',
+    '<Image src="https://cyber.dabamos.de/88x31/88x31.gif" alt="88x31" width="88" height="31" />',
+    '<Image src="https://cyber.dabamos.de/88x31/blink-0.gif" alt="blink" width="88" height="31" />',
+    '<Image src="https://cyber.dabamos.de/88x31/bu12.gif" alt="bu12" width="88" height="31" />',
+    '<Image src="https://cyber.dabamos.de/88x31/konata.gif" alt="konata" width="88" height="31" />',
+    '<Image src="https://cyber.dabamos.de/88x31/pbm.gif" alt="pbm" width="88" height="31" />',
+    '<Image src="https://cyber.dabamos.de/88x31/web3no.gif" alt="no web3" width="88" height="31" />',
+    '<Image src="https://cyber.dabamos.de/88x31/tummy.gif" alt="tummy" width="88" height="31" />',
+    '<Image src="https://cyber.dabamos.de/88x31/transnow2.gif" alt="trans rights" width="88" height="31" />',
+    '<Image src="https://cyber.dabamos.de/88x31/hello_kitty.gif" alt="hello kitty" width="88" height="31" />',
+];
+---
+
+<div class="places flex select-none overflow-hidden relative min-h-16">
+    <div class="m-0 py-4 flex shrink-0 justify-around min-w-full min-h-[31px] animate-[marquee_10s_linear_infinite]">
+        {buttons.map((button) => <Fragment set:html={button} />)}
+    </div>
+    <div class="m-0 py-4 flex shrink-0 justify-around min-w-full min-h-[31px] animate-[marquee_10s_linear_infinite]" aria-hidden="true">
+        {buttons.map((button) => <Fragment set:html={button} />)}
+    </div>
+</div>
+
+<!--
+<a href="/button/nvkomata.gif">
+        <Image
+            src="https://nvkomata.github.io/button/nvkomata.gif"
+            alt="nvkomata"
+            width="88"
+            height="31"
+        />
+    </a>
+-->
+
+<style>
+    .places > div {
+        img {
+            margin: 0 0.25em;
+            image-rendering: pixelated;
+            transition: scale 0.1s ease-out;
+            height: 31px;
+            min-height: 31px;
+            max-height: 31px;
+        }
+        img:hover {
+            scale: 2;
+        }
+    }
+
+    .places:hover > div {
+        animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .places span {
+            animation-iteration-count: 1;
+            animation-duration: 0.01;
+            width: auto;
+            padding-left: 0;
+        }
+    }
+</style>

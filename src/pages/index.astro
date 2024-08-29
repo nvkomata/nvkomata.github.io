@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 
 import Link from "../components/Link.astro";
 import Icon from "../components/Icon.astro";
+
+import Buttons from "../components/Buttons.astro";
 ---
 
 <Layout title="NVKOMATA" class="bg-zero bg-cover bg-center">
@@ -34,10 +36,14 @@ import Icon from "../components/Icon.astro";
                 icon="fedi"
             />
         </nav>
-        <div class="flex flex-col sm:flex-row items-center max-w-max gap-2 ml-auto mt-4">
+        <div
+            class="flex flex-col sm:flex-row items-center max-w-max gap-2 ml-auto mt-4"
+        >
             <a
                 class="select-none rounded-3xl max-w-max inline-flex gap-2 items-center py-2 px-4 font-monoer max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-red-400/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
-                href="https://ko-fi.com/nvkomata" target="_blank" rel="noopener noreferrer"
+                href="https://ko-fi.com/nvkomata"
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 <div class="fill-current h-4 w-4">
                     <Icon icon="kofi" />
@@ -49,7 +55,9 @@ import Icon from "../components/Icon.astro";
             </a>
             <a
                 class="select-none rounded-3xl max-w-max inline-flex gap-2 items-center py-2 px-4 font-monoer max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-red-200/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
-                href="https://en.pronouns.page/@nvkomata" target="_blank" rel="noopener noreferrer"
+                href="https://en.pronouns.page/@nvkomata"
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 <span>she/her</span>
                 <div class="fill-current h-4 w-4 opacity-50">
@@ -58,7 +66,9 @@ import Icon from "../components/Icon.astro";
             </a>
             <a
                 class="select-none rounded-3xl max-w-max inline-flex gap-2 items-center py-2 px-4 font-monoer max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-purple-300/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
-                href="/blog/" target="_blank" rel="noopener noreferrer"
+                href="/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 <span>blog</span>
                 <div class="fill-current h-4 w-4 opacity-50">
@@ -101,11 +111,25 @@ import Icon from "../components/Icon.astro";
                 alt=""
             />
             <div
+                class="absolute z-[200] opacity-20 hover:opacity-100 transition-opacity"
+            >
+                <Buttons />
+            </div>
+            <div
                 class="w-[90vw] h-[90vh] z-50 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                 id="layer-2"
             >
-                <p class="z-10 absolute font-mono text-sm block w-1/4 p-2">
-                    あなたが見るものは <br /> あなたが得るものです <br> /ᐠ - ˕ -マ Ⳋ
+                <p
+                    class="z-10 absolute font-mono text-sm block w-1/4 p-2 min-w-32 mt-4"
+                >
+                    こんにちは訪問者 <br />
+                    <span class="inline-block">/ᐠ - ˕ -マ</span>
+                    <br />
+                    <img
+                        src="https://nvkomata.github.io/button/nvkomata.gif"
+                        alt="nvkomata"
+                        class="w-[64px] h-auto opacity-50 hover:opacity-100 transition-opacity"
+                    />
                 </p>
             </div>
             <div
