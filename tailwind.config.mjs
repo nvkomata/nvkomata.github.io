@@ -7,7 +7,8 @@ export default {
         extend: {
             backgroundImage: {
                 eternalskies: "url('/eternalskies.jpg')",
-                zero: "url('/layer0.jpg')",
+                tokyo: "url('/parallax/tokyo/layer0.jpg')",
+                field: "url('/parallax/field/layer0.jpg')",
             },
         },
         fontFamily: {
