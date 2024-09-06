@@ -5,6 +5,12 @@ import Link from "../components/Link.astro";
 import Icon from "../components/Icon.astro";
 
 import Buttons from "../components/Buttons.astro";
+
+import Image from "astro/components/Image.astro";
+
+import avatar from "../images/avatar.png"
+import layer1 from "../images/parallax/field/layer1.png"
+import layer2 from "../images/parallax/field/layer2.png"
 ---
 
 <Layout title="NVKOMATA" class="bg-field bg-cover bg-center">
@@ -80,11 +86,12 @@ import Buttons from "../components/Buttons.astro";
     <footer
         class="select-none z-[300] absolute bottom-0 text-center w-full p-4 pt-0 text-zinc-300 text-xs before:absolute before:inset-0 before:w-screen before:backdrop-blur-xl before:-z-10 before:[-webkit-mask:_linear-gradient(180deg,_transparent,_black_50%)]"
     >
-        <img
+        <Image
             src="https://count.getloli.com/get/@nvkosite?theme=asoul"
             alt=""
+            inferSize
             title="thanks for visiting"
-            class="w-52 h-auto mx-auto my-4"
+            class="w-52 h-auto mx-auto my-4 pointer-events-none"
         />
         <p class="my-2 drop-shadow-xl">
             If you find any broken links or bugs on
@@ -105,9 +112,9 @@ import Buttons from "../components/Buttons.astro";
             class="w-screen h-screen absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
             id="layer-1"
         >
-            <img
+            <Image
                 class="select-none absolute bottom-0 scale-125 brightness-50"
-                src="/parallax/field/layer1.png"
+                src={layer1}
                 alt=""
             />
             <div
@@ -141,17 +148,17 @@ import Buttons from "../components/Buttons.astro";
                 class="w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                 id="layer-3"
             >
-                <img
+                <Image
                     class="select-none absolute bottom-0 scale-125 brightness-75"
-                    src="/parallax/field/layer2.png"
+                    src={layer2}
                     alt=""
                 />
             </div>
-            <img
-                class="object-cover select-none pointer-events-none z-[200] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-                src="avatar.png"
+            <Image
+                src={avatar}
                 id="layer-4"
                 alt=""
+                class="object-cover select-none pointer-events-none z-[200] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
             />
         </div>
     </div>

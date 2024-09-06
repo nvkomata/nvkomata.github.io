@@ -6,9 +6,9 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                eternalskies: "url('/eternalskies.jpg')",
-                tokyo: "url('/parallax/tokyo/layer0.jpg')",
-                field: "url('/parallax/field/layer0.jpg')",
+                eternalskies: "url('/backgrounds/eternalskies.jpg')",
+                tokyo: "url('/backgrounds/tokyo.jpg')",
+                field: "url('/backgrounds/field.jpg')",
             },
         },
         fontFamily: {
