@@ -8,17 +8,17 @@ import Buttons from "../components/Buttons.astro";
 
 import Image from "astro/components/Image.astro";
 
-import avatar from "../images/avatar.png";
-import layer1 from "../images/parallax/field/layer1.png";
-import layer2 from "../images/parallax/field/layer2.png";
+import avatar from "../images/1up.png";
+import layer1 from "../images/parallax/demons/layer1.png";
+import layer2 from "../images/parallax/demons/layer2.png";
 ---
 
-<Layout title="NVKOMATA" class="bg-field bg-cover bg-center">
+<Layout title="NVKOMATA" class="bg-demons bg-cover bg-center overflow-hidden">
   <main
     class="select-none p-8 z-[300] absolute bottom-[20%] sm:bottom-[30%] right-0 text-right"
   >
     <h1
-      class="font-serif scale-y-125 text-5xl md:text-6xl lg:text-7xl uppercase drop-shadow-xl"
+      class="font-serif tracking-wide max-[333px]:text-4xl text-5xl md:text-6xl lg:text-8xl uppercase drop-shadow-xl"
     >
       nvkomata
     </h1>
@@ -39,12 +39,17 @@ import layer2 from "../images/parallax/field/layer2.png";
         name="follow me on fedi"
         icon="fedi"
       />
+      <Link
+        href="https://nvkomata.bsky.social"
+        name="follow me on bluesky"
+        icon="bluesky"
+      />
     </nav>
     <div
       class="flex flex-col sm:flex-row items-center max-w-max gap-2 ml-auto mt-4"
     >
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-monoer max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-red-400/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-red-400/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="https://ko-fi.com/nvkomata"
         target="_blank"
         rel="noopener noreferrer"
@@ -58,7 +63,7 @@ import layer2 from "../images/parallax/field/layer2.png";
         </div>
       </a>
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-monoer max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-red-200/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-red-200/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="https://en.pronouns.page/@nvkomata"
         target="_blank"
         rel="noopener noreferrer"
@@ -69,7 +74,7 @@ import layer2 from "../images/parallax/field/layer2.png";
         </div>
       </a>
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-monoer max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-purple-300/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-purple-300/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="/blog/"
         target="_blank"
         rel="noopener noreferrer"
@@ -110,7 +115,7 @@ import layer2 from "../images/parallax/field/layer2.png";
       id="layer-1"
     >
       <Image
-        class="select-none absolute bottom-0 scale-125 brightness-50"
+        class="select-none absolute bottom-0 scale-125 brightness-50 pointer-events-none"
         src={layer1}
         alt=""
       />
@@ -132,7 +137,7 @@ import layer2 from "../images/parallax/field/layer2.png";
           class="z-10 p-2 max-w-max border border-transparent group hover:border-slate-50/30 hover:shadow-xl transition-all"
         >
           <img
-            src="https://nvkomata.github.io/button/nvkomata.gif"
+            src="/button/nvkomata.gif"
             alt="nvkomata"
             class="[image-rendering:_pixelated] w-[88px] h-auto opacity-50 group-hover:opacity-100 group-hover:w-[176px] transition-all"
           />
@@ -152,7 +157,7 @@ import layer2 from "../images/parallax/field/layer2.png";
         id="layer-3"
       >
         <Image
-          class="select-none absolute bottom-0 scale-125 brightness-75"
+          class="select-none absolute bottom-0 scale-125 brightness-75 pointer-events-none"
           src={layer2}
           alt=""
         />
@@ -161,7 +166,7 @@ import layer2 from "../images/parallax/field/layer2.png";
         src={avatar}
         id="layer-4"
         alt=""
-        class="object-cover select-none pointer-events-none z-[200] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+        class="object-contain h-3/4 sm:h-full sm:w-[55vw] md:w-[40vw] sm:object-top sm:object-cover select-none pointer-events-none z-[200] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
       />
     </div>
   </div>
@@ -179,9 +184,9 @@ import layer2 from "../images/parallax/field/layer2.png";
           pageY = e.clientY - window.innerHeight / 2;
         layerOne.style.transform =
           "translateX(-" +
-          (50 + pageX / 200) +
+          (50 + pageX / 500) +
           "%) translateY(-" +
-          (50 + pageY / 200) +
+          (50 + pageY / 500) +
           "%)";
         layerTwo.style.transform =
           "translateX(-" +

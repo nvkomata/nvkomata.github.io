@@ -3,28 +3,57 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="404 - NVKOMATA">
-    <main
-        class="select-none font-mono mx-auto px-4 h-screen text-sm flex flex-col justify-center items-center"
+  <main
+    class="select-none font-mono mx-auto px-4 h-screen text-sm flex flex-col justify-center items-center"
+  >
+    <video
+      class="w-lg"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="ChiyoTsukidate.jpg"
+      id="404-main-show"
     >
-        <video
-            class="w-lg"
-            autoplay
-            loop
-            muted
-            playsinline
-            poster="ChiyoTsukidate.jpg"
-        >
-            <source src="outoftouch.mp4" />
-        </video>
-        <div class="max-w-lg mt-4">
-            <h1 class="flex justify-between text-4xl"><span>4</span><span>0</span><span>4</span></h1>
-            <p class="flex justify-between"><span>n</span><span>o</span><span>t</span><span> </span><span>f</span><span>o</span><span>u</span><span>n</span><span>d</span></p>
-            <p class="text-center mt-4">
-                sorry, <del>couldn't <br />find this page</del><br />you're out
-                of touch
-            </p>
-        </div>
-        <img class="invert hidden md:block mb-4 max-w-24 relative left-32 bottom-32 -mb-24 opacity-10" src="heart.svg" alt="</3" />
-        <a class="border-t border-red-200/20 transition-all mt-4 px-4 py-2 font-bold hover:bg-red-100 hover:text-zinc-950" href="/">go back</a>
-    </main>
+    </video>
+    <div class="max-w-lg mt-4">
+      <h1 class="flex justify-between text-4xl">
+        <span>4</span><span>0</span><span>4</span>
+      </h1>
+      <p class="flex justify-between">
+        <span>n</span><span>o</span><span>t</span><span> </span><span>f</span
+        ><span>o</span><span>u</span><span>n</span><span>d</span>
+      </p>
+      <p class="text-center mt-4" id="404-comment"></p>
+    </div>
+    <img
+      class="invert hidden md:block max-w-24 relative left-32 bottom-32 -mb-24 opacity-10"
+      src="heart.svg"
+      alt="</3"
+    />
+    <a
+      class="border-t border-red-200/20 transition-all mt-4 px-4 py-2 font-bold hover:bg-red-100 hover:text-zinc-950"
+      href="/">go back</a
+    >
+  </main>
 </Layout>
+
+<script is:inline>
+  var d = Math.random();
+  const video = document.getElementById("404-main-show");
+  const comment = document.getElementById("404-comment");
+  if (d <= 0.98) {
+    video.innerHTML = `<source src="outoftouch.mp4" />`;
+    comment.innerHTML = `sorry, <del>couldn't <br />find this page</del><br />you're out of touch`;
+    document.body.classList.add(
+      "bg-gradient-to-b",
+      "from-black",
+      "to-[#282128]",
+    );
+  } else {
+    video.setAttribute("poster", "15.png");
+    video.classList.add("max-w-lg", "w-[100%]");
+    comment.innerHTML = `NOTHING'S GONNA <br />CHANGE THE WORLD`;
+    document.body.classList.add("bg-gradient-to-t", "from-black", "to-red-950");
+  }
+</script>

@@ -2,22 +2,22 @@
 import Icon from "./Icon.astro";
 
 interface Props {
-    href: string;
-    name: string;
-    icon: string;
+  href: string;
+  name: string;
+  icon: string;
 }
 
 const { href, name, icon } = Astro.props;
 ---
 
 <a
-    rel="me"
-    href={href}
-    title={name}
-    aria-label={icon}
-    class="w-16 h-16 p-2 fill-current transition-all rounded-full backdrop-blur-md backdrop-saturate-200 bg-zinc-900/50 border border-zinc-400/20 text-red-100 select-none inline-flex items-center justify-center hover:bg-red-50 hover:text-zinc-950"
+  rel="me"
+  href={href}
+  title={name}
+  aria-label={icon}
+  class="w-16 h-16 max-[333px]:w-12 max-[333px]:h-12 p-2 fill-current transition-all rounded-full backdrop-blur-md backdrop-saturate-200 bg-zinc-900/50 border border-zinc-400/20 text-red-100 select-none inline-flex items-center justify-center hover:bg-red-50 hover:text-zinc-950"
 >
-    <div class="w-3/5 h-3/5 self-center">
-        <Icon icon={icon} />
-    </div>
+  <div class="w-3/5 h-3/5 self-center">
+    <Icon icon={icon} />
+  </div>
 </a>

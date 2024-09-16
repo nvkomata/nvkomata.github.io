@@ -1,39 +1,43 @@
 ---
 interface Props {
-    title: string;
-    class?: string;
+  title: string;
+  class?: string;
 }
 
 const { class: className, title } = Astro.props;
 
-// Iosevka and Lora are licensed under SIL OFL
-import "@fontsource/iosevka-curly-slab";
-import "@fontsource/lora";
+// fonts used are licensed under SIL OFL
+import "@fontsource/forum";
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="my personal website" />
-        <meta name="viewport" content="width=device-width" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="my personal website" />
+    <meta name="viewport" content="width=device-width" />
 
-        <link rel="shortcut icon" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
 
-        <meta name="generator" content={Astro.generator} />
-        <meta content={title} property="og:title" />
-        <meta content="where all goes to die. /ᐠ - ˕ -マ Ⳋ" property="og:description" />
-        <meta content="https://nvkomata.github.io" property="og:url" />
-        <meta
-            content="https://nvkomata.github.io/favicon.png"
-            property="og:image"
-        />
-        <meta content="#020001" data-react-helmet="true" name="theme-color" />
+    <meta name="generator" content={Astro.generator} />
+    <meta content={title} property="og:title" />
+    <meta
+      content="where all goes to die. /ᐠ - ˕ -マ Ⳋ"
+      property="og:description"
+    />
+    <meta content="https://nvkomata.github.io" property="og:url" />
+    <meta
+      content="https://nvkomata.github.io/favicon.png"
+      property="og:image"
+    />
+    <meta content="#020001" data-react-helmet="true" name="theme-color" />
 
-        <title>{title}</title>
-    </head>
-    <body class:list={['w-screen h-screen overflow-hidden bg-black text-red-50 font-sans', className]}>
-        <slot />
-    </body>
+    <title>{title}</title>
+  </head>
+  <body
+    class:list={["w-screen h-screen bg-black text-red-50 font-sans", className]}
+  >
+    <slot />
+  </body>
 </html>
