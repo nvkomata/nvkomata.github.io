@@ -13,14 +13,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: [
-        "Helvetica Neue",
-        "HelveticaNeue",
-        "Helvetica",
-        "ui-sans-serif",
-        "system-ui",
-        "sans-serif",
-      ],
+      sans: ["sans-serif", "system-ui"],
       serif: ["Forum", "ui-serif", "serif"],
       mono: ["ui-monospace", "SFMono-Regular", "monospace"],
     },
