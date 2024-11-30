@@ -8,21 +8,23 @@ import Buttons from "../components/Buttons.astro";
 
 import Image from "astro/components/Image.astro";
 
-import avatar from "../images/1up.png";
+import avatar from "../images/avatar.png";
 import layer1 from "../images/parallax/demons/layer1.png";
 import layer2 from "../images/parallax/demons/layer2.png";
 ---
 
-<Layout title="NVKOMATA" class="bg-demons bg-cover bg-center overflow-hidden">
+<Layout title="nvkomata" class="bg-demons bg-cover bg-center overflow-hidden">
   <main
     class="select-none p-8 z-[300] absolute bottom-[20%] sm:bottom-[30%] right-0 text-right"
   >
     <h1
-      class="font-serif tracking-wide max-[333px]:text-4xl text-5xl md:text-6xl lg:text-8xl uppercase drop-shadow-xl"
+      class="drop-shadow-[0px_0px_3px_rgba(0,0,0,0.95)] font-serif tracking-wide max-[333px]:text-4xl text-5xl md:text-6xl lg:text-8xl"
     >
       nvkomata
     </h1>
-    <p class="drop-shadow-xl my-4">amateur vtuber and design connoisseur 🥀</p>
+    <p class="drop-shadow-[0px_0px_3px_rgba(0,0,0,0.95)] my-4">
+      something of a cat witch. i do stuff sometimes.
+    </p>
     <nav class="select-none">
       <Link
         href="https://linktr.ee/nvkomata"
@@ -44,7 +46,7 @@ import layer2 from "../images/parallax/demons/layer2.png";
       class="flex flex-col sm:flex-row items-center max-w-max gap-2 ml-auto mt-4"
     >
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-red-400/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-red-400/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="https://ko-fi.com/nvkomata"
         target="_blank"
         rel="noopener noreferrer"
@@ -58,7 +60,7 @@ import layer2 from "../images/parallax/demons/layer2.png";
         </div>
       </a>
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-red-200/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-red-200/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="https://en.pronouns.page/@nvkomata"
         target="_blank"
         rel="noopener noreferrer"
@@ -69,7 +71,7 @@ import layer2 from "../images/parallax/demons/layer2.png";
         </div>
       </a>
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all bg-zinc-800/30 hover:bg-purple-300/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-purple-300/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="/blog"
         target="_blank"
         rel="noopener noreferrer"
