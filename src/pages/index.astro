@@ -9,11 +9,14 @@ import Buttons from "../components/Buttons.astro";
 import Image from "astro/components/Image.astro";
 
 import avatar from "../images/avatar.png";
-import layer1 from "../images/parallax/demons/layer1.png";
-import layer2 from "../images/parallax/demons/layer2.png";
+import layer1 from "../images/parallax/1.png";
+import layer2 from "../images/parallax/2.png";
 ---
 
-<Layout title="nvkomata" class="bg-demons bg-cover bg-center overflow-hidden">
+<Layout
+  title="nvkomata"
+  class="bg-gradient-to-b from-neutral-50 to-neutral-500 bg-cover bg-center overflow-hidden"
+>
   <main
     class="select-none p-8 z-[300] absolute bottom-[20%] sm:bottom-[30%] right-0 text-right"
   >
@@ -41,12 +44,17 @@ import layer2 from "../images/parallax/demons/layer2.png";
         name="follow me on fedi from mastodon, pleroma, misskey and others"
         icon="fedi"
       />
+      <Link
+        href="https://bsky.app/profile/nvkomata.bsky.social"
+        name="the doomsday platform for burned out twitter users"
+        icon="bsky"
+      />
     </nav>
     <div
       class="flex flex-col sm:flex-row items-center max-w-max gap-2 ml-auto mt-4"
     >
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-red-400/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-red-400/70 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="https://ko-fi.com/nvkomata"
         target="_blank"
         rel="noopener noreferrer"
@@ -60,7 +68,7 @@ import layer2 from "../images/parallax/demons/layer2.png";
         </div>
       </a>
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-red-200/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-pink-300/70 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="https://en.pronouns.page/@nvkomata"
         target="_blank"
         rel="noopener noreferrer"
@@ -71,7 +79,7 @@ import layer2 from "../images/parallax/demons/layer2.png";
         </div>
       </a>
       <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-purple-300/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
+        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-rose-700/70 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
         href="/blog"
         target="_blank"
         rel="noopener noreferrer"
@@ -111,7 +119,7 @@ import layer2 from "../images/parallax/demons/layer2.png";
       id="layer-1"
     >
       <Image
-        class="select-none absolute bottom-0 scale-125 brightness-50 pointer-events-none"
+        class="select-none absolute bottom-0 w-full scale-125 pointer-events-none"
         src={layer1}
         alt=""
       />
@@ -152,7 +160,7 @@ import layer2 from "../images/parallax/demons/layer2.png";
         id="layer-3"
       >
         <Image
-          class="select-none absolute bottom-0 scale-125 brightness-75 pointer-events-none"
+          class="select-none absolute bottom-0 w-full scale-125 pointer-events-none"
           src={layer2}
           alt=""
         />
@@ -179,9 +187,9 @@ import layer2 from "../images/parallax/demons/layer2.png";
           pageY = e.clientY - window.innerHeight / 2;
         layerOne.style.transform =
           "translateX(-" +
-          (50 + pageX / 500) +
+          (50 + pageX / 1000) +
           "%) translateY(-" +
-          (50 + pageY / 500) +
+          (50 + pageY / 1000) +
           "%)";
         layerTwo.style.transform =
           "translateX(-" +
