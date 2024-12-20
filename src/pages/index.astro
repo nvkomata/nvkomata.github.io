@@ -2,214 +2,62 @@
 import Layout from "../layouts/Layout.astro";
 
 import Link from "../components/Link.astro";
-import Icon from "../components/Icon.astro";
 
-import Buttons from "../components/Buttons.astro";
+import Footer from "../components/Footer.astro";
 
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
-import avatar from "../images/avatar.png";
-import layer1 from "../images/parallax/1.png";
-import layer2 from "../images/parallax/2.png";
+import avatar from "../images/pitch_black_witch_by_doesu_d84okrk_fill.png";
 ---
 
-<Layout
-  title="nvkomata"
-  class="bg-gradient-to-b from-neutral-50 to-neutral-500 bg-cover bg-center overflow-hidden"
->
+<Layout title="nvkomata" class="max-md:mb-48">
   <main
-    class="select-none p-8 z-[300] absolute bottom-[20%] sm:bottom-[30%] right-0 text-right"
+    class="w-screen h-screen select-none p-8 text-center flex flex-col justify-center items-center"
   >
-    <h1
-      class="drop-shadow-[0px_0px_3px_rgba(0,0,0,0.95)] font-serif tracking-wide max-[333px]:text-4xl text-5xl md:text-6xl lg:text-8xl"
-    >
-      nvkomata
-    </h1>
-    <p class="drop-shadow-[0px_0px_3px_rgba(0,0,0,0.95)] my-4">
-      something of a cat witch. i do stuff sometimes.
-    </p>
-    <nav class="select-none">
-      <Link
-        href="https://linktr.ee/nvkomata"
-        name="see my links on linktree"
-        icon="linktree"
-      />
-      <Link
-        href="https://www.youtube.com/@nvkomata"
-        name="watch my videos on youtube"
-        icon="youtube"
-      />
-      <Link
-        href="https://plasmatrap.com/@nvkomata"
-        name="follow me on fedi from mastodon, pleroma, misskey and others"
-        icon="fedi"
-      />
-      <Link
-        href="https://bsky.app/profile/nvkomata.bsky.social"
-        name="the doomsday platform for burned out twitter users"
-        icon="bsky"
-      />
-    </nav>
-    <div
-      class="flex flex-col sm:flex-row items-center max-w-max gap-2 ml-auto mt-4"
-    >
-      <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-red-400/70 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
-        href="https://ko-fi.com/nvkomata"
-        target="_blank"
-        rel="noopener noreferrer"
+    <div>
+      <Image src={avatar} alt="" class="max-w-96 w-full mx-2" />
+      <div
+        class="p-4 text-left w-full tracking-wide font-mono text-5xl font-black"
       >
-        <div class="fill-current h-4 w-4">
-          <Icon icon="kofi" />
-        </div>
-        <span>support</span>
-        <div class="fill-current h-4 w-4 opacity-50">
-          <Icon icon="newtablink" />
-        </div>
-      </a>
-      <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-pink-300/70 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
-        href="https://en.pronouns.page/@nvkomata"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span>she/her</span>
-        <div class="fill-current h-4 w-4 opacity-50">
-          <Icon icon="newtablink" />
-        </div>
-      </a>
-      <a
-        class="select-none rounded-3xl inline-flex gap-2 items-center py-2 px-4 font-mono max-w-max ml-auto transition-all backdrop-saturate-200 bg-zinc-900/50 hover:bg-rose-700/70 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-zinc-950/40 shadow-zinc-950/40 border-t border-zinc-400/50"
-        href="/blog"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span>blog</span>
-        <div class="fill-current h-4 w-4 opacity-50">
-          <Icon icon="newtablink" />
-        </div>
-      </a>
+        <p>nvkomata</p>
+      </div>
+
+      <nav class="select-none flex max-md:flex-col gap-2">
+        <Link
+          href="https://linktr.ee/nvkomata"
+          name="see my links on linktree"
+          icon="linktree"
+        />
+        <Link
+          href="https://www.youtube.com/@nvkomata"
+          name="watch my videos on youtube"
+          icon="youtube"
+        />
+        <Link
+          href="https://bsky.app/profile/nvkomata.bsky.social"
+          name="the doomsday platform for burned out twitter users"
+          icon="bsky"
+        />
+        <Link
+          href="https://plasmatrap.com/@nvkomata"
+          name="follow me on fedi from mastodon, pleroma, misskey and others"
+          icon="fedi"
+        />
+      </nav>
     </div>
   </main>
-  <footer
-    class="select-none z-[300] absolute bottom-0 text-center w-full p-4 pt-0 text-zinc-300 text-xs before:absolute before:inset-0 before:w-screen before:backdrop-blur-xl before:-z-10 before:[-webkit-mask:_linear-gradient(180deg,_transparent,_black_50%)]"
-  >
-    <img
-      src="https://count.getloli.com/get/@nvkosite?theme=asoul"
-      alt=""
-      title="thanks for visiting"
-      class="w-52 h-auto mx-auto my-4 pointer-events-none"
-    />
-    <p class="my-2 drop-shadow-xl">
-      If you find any broken links or bugs on
-      <a href="https://github.com/nvkomata/nvkomata.github.io">this website</a>,
-      do not contact me. I do not care, thank you.
-    </p>
-    <script type="text/javascript" is:inline>
-      var year = new Date();
-      document.write("&copy; " + year.getFullYear() + " nvkomata");
-    </script>
-  </footer>
 
-  <div
-    class="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
-  >
-    <div
-      class="w-screen h-screen absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-      id="layer-1"
-    >
-      <Image
-        class="select-none absolute bottom-0 w-full scale-125 pointer-events-none"
-        src={layer1}
-        alt=""
-      />
-      <div
-        class="absolute z-[200] opacity-20 hover:opacity-100 transition-opacity"
-      >
-        <Buttons />
-      </div>
-      <div
-        class="w-[90vw] h-[90vh] z-50 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-        id="layer-2"
-      >
-        <p class="z-10 font-mono text-sm block w-1/4 p-2 min-w-32 mt-4">
-          こんにちは訪問者 <br />
-          <span class="inline-block">/ᐠ - ˕ -マ</span>
-          <br />
-        </p>
-        <div
-          class="z-10 p-2 max-w-max border border-transparent group hover:border-slate-50/30 hover:shadow-xl transition-all"
-        >
-          <img
-            src="/button/nvkomata.gif"
-            alt="nvkomata"
-            class="[image-rendering:_pixelated] w-[88px] h-auto opacity-50 group-hover:opacity-100 group-hover:w-[176px] transition-all"
-          />
-          <textarea
-            id="buttoncode"
-            class="resize-none bg-zinc-900/50 text-xs p-2 font-mono opacity-0 group-hover:opacity-100 transition-all w-full h-32"
-            readonly></textarea>
-          <script is:inline>
-            const buttoncode = document.getElementById("buttoncode");
-            buttoncode.innerHTML = `<a href="https://nvkomata.github.io/" target="_blank"><img src="https://nvkomata.github.io/button/nvkomata.gif"></a>`;
-          </script>
-        </div>
-      </div>
-      <div
-        class="w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-        id="layer-3"
-      >
-        <Image
-          class="select-none absolute bottom-0 w-full scale-125 pointer-events-none"
-          src={layer2}
-          alt=""
-        />
-      </div>
-      <Image
-        src={avatar}
-        id="layer-4"
-        alt=""
-        class="object-contain h-3/4 sm:h-full sm:w-[55vw] md:w-[40vw] sm:object-top sm:object-cover select-none pointer-events-none z-[200] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-      />
-    </div>
-  </div>
-
+  <script
+    is:inline
+    src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
   <script is:inline>
-    window.onload = function () {
-      var wrapper = document.getElementsByTagName("body")[0],
-        layerOne = document.querySelector("#layer-1"),
-        layerTwo = document.querySelector("#layer-2"),
-        layerThree = document.querySelector("#layer-3"),
-        layerFour = document.querySelector("#layer-4");
-
-      wrapper.addEventListener("mousemove", function (e) {
-        var pageX = e.clientX - window.innerWidth / 2,
-          pageY = e.clientY - window.innerHeight / 2;
-        layerOne.style.transform =
-          "translateX(-" +
-          (50 + pageX / 1000) +
-          "%) translateY(-" +
-          (50 + pageY / 1000) +
-          "%)";
-        layerTwo.style.transform =
-          "translateX(-" +
-          (50 + pageX / 1000) +
-          "%) translateY(-" +
-          (50 + pageY / 1000) +
-          "%)";
-        layerThree.style.transform =
-          "translateX(-" +
-          (50 + pageX / 400) +
-          "%) translateY(-" +
-          (50 + pageY / 400) +
-          "%)";
-        layerFour.style.transform =
-          "translateX(-" +
-          (50 + pageX / 100) +
-          "%) translateY(-" +
-          (50 + pageY / 100) +
-          "%)";
-      });
-    };
+    kofiWidgetOverlay.draw("nvkomata", {
+      type: "floating-chat",
+      "floating-chat.donateButton.text": "Support me",
+      "floating-chat.donateButton.background-color": "#323842",
+      "floating-chat.donateButton.text-color": "#fff",
+    });
   </script>
+
+  <Footer />
 </Layout>

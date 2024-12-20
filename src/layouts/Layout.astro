@@ -5,9 +5,6 @@ interface Props {
 }
 
 const { class: className, title } = Astro.props;
-
-// fonts used are licensed under SIL OFL
-import "@fontsource/forum";
 ---
 
 <!doctype html>
@@ -22,22 +19,12 @@ import "@fontsource/forum";
 
     <meta name="generator" content={Astro.generator} />
     <meta content={title} property="og:title" />
-    <meta
-      content="where all goes to die. /ᐠ - ˕ -マ Ⳋ"
-      property="og:description"
-    />
-    <meta content="https://nvkomata.github.io" property="og:url" />
-    <meta
-      content="https://nvkomata.github.io/favicon.png"
-      property="og:image"
-    />
+    <meta content="witch's brew" property="og:description" />
     <meta content="#020001" data-react-helmet="true" name="theme-color" />
 
     <title>{title}</title>
   </head>
-  <body
-    class:list={["w-screen h-screen bg-black text-white font-sans", className]}
-  >
+  <body class:list={["w-screen h-screen bg-black text-white", className]}>
     <slot />
   </body>
 </html>

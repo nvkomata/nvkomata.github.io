@@ -15,9 +15,10 @@ const { href, name, icon } = Astro.props;
   href={href}
   title={name}
   aria-label={icon}
-  class="w-16 h-16 max-[333px]:w-12 max-[333px]:h-12 p-2 fill-current transition-all rounded-full backdrop-blur-md backdrop-saturate-200 bg-zinc-900/50 border border-zinc-400/20 text-white select-none inline-flex items-center justify-center hover:bg-white hover:text-zinc-950"
+  class="p-2 fill-current transition-all rounded-xl max-w-max bg-neutral-900/50 text-white select-none inline-flex items-center justify-center gap-2 hover:bg-white hover:text-zinc-950"
 >
-  <div class="w-3/5 h-3/5 self-center">
+  <div class="w-6 h-6">
     <Icon icon={icon} />
   </div>
+  <span>{icon}</span>
 </a>
